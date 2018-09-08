@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './App.css';
 import { url } from './utils/variables';
 import { Search } from './containers/Search';
-import EventContainer from './containers/EventContainer';
+import ContentRouter from './components/ContentRouter/ContentRouter';
 import { populateFromLocation } from './actions/index';
 import { eventCleaner } from './utils/helper';
 
@@ -26,7 +26,7 @@ class App extends Component {
         <h1>BEERS IN TOWN</h1>
         <Search />
         <section>
-          <EventContainer />
+          <ContentRouter />
         </section>
       </div>
     );

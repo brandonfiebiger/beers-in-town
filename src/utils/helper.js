@@ -7,6 +7,6 @@ export const eventCleaner = (events) => {
     if(!description) {
       desc = '<p>no description available</p>'
     }
-    return {desc, groupName: event.group.name, time: event.local_time, date: event.local_date, venue, group}
+    return {desc, groupName: event.group.name, time: event.local_time, date: event.local_date, venue, group, name: event.name }
   })
 }
