@@ -1,3 +1,5 @@
+import { fetchBreweryData } from './apiCalls'
+
 export const eventCleaner = (events) => {
   return events.map(event => {
     // console.log(event);
@@ -15,3 +17,8 @@ export const eventCleaner = (events) => {
     return {desc, groupName: event.group.name, time: event.local_time, date: event.local_date, ven, group, name: event.name, id: event.id }
   })
 }
+
+export const cleanBreweryData = async () => {
+  await fetchBreweryData()
+}
+cleanBreweryData()
