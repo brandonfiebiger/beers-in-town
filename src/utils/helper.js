@@ -19,6 +19,7 @@ export const eventCleaner = (events) => {
 }
 
 export const cleanBreweryData = async () => {
-  await fetchBreweryData()
+  const fetchedBreweries = await fetchBreweryData()
+  console.log(fetchedBreweries)
 }
 cleanBreweryData()
