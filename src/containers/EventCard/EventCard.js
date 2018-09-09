@@ -21,7 +21,6 @@ class EventCard extends Component {
     const { date, desc, group, time, ven, groupName, name, id } = this.props
     return(
     <div>
-     {/* <Route exact path={`/events/${id}`} render={() => <EventInfo {...this.props} />}/> */}
      <h2>{name}</h2>
      <p>{date}</p>
      <p>{time}</p>
