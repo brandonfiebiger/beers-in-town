@@ -10,17 +10,16 @@ import { populateFromLocation } from './actions/index';
 import { eventCleaner } from './utils/helper';
 import { EventInfo } from '../src/containers/EventInfo/EventInfo';
 
+
 class App extends Component {
   
   async componentDidMount() {
-    const response = await fetch(url);
-    const result = await response.json();
-    const cleanEvents = eventCleaner(result.events)
-    console.log(cleanEvents)
-    this.props.populateEvents(cleanEvents)
-    navigator.geolocation.getCurrentPosition(function(location) {
+    let cleanEvents;
+    navigator.geolocation.getCurrentPosition( async (location) => {
+      cleanEvents = await eventCleaner(location.coords.latitude, location.coords.longitude)
       console.log(location.coords.latitude);
       console.log(location.coords.longitude);
+      this.props.populateEvents(cleanEvents)
     });
   }
   
