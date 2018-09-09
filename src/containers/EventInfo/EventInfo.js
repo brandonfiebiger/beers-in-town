@@ -1,10 +1,9 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 
 export const EventInfo = (props) => {
-  console.log(props)
+
   return(
     <div>
       <h1>{props.cardsProps.name}</h1>

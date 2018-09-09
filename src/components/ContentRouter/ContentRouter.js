@@ -6,11 +6,13 @@ import { connect } from 'react-redux';
 
 
 const ContentRouter = (props) => {
-
+  const handleEventRoute = () => {
+    props.history.push('/events')
+  }
   return(
     <div>
     <header>
-      <NavLink to='/events' className='nav'>events</NavLink>
+      <button onClick={() => handleEventRoute()}>events</button>
     </header>
       <Route exact path= '/events' component={EventContainer} />
       <Route exact path={`/events/${props.cardsProps.id}`} render={() => <EventInfo {...props} />}/>
@@ -22,4 +24,4 @@ export const mapStateToProps = state => ({
   cardsProps: state.eventToView
 })
 
-export default connect(mapStateToProps, null)(ContentRouter);
+export default withRouter(connect(mapStateToProps, null)(ContentRouter));
