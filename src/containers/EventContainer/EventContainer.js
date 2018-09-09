@@ -5,7 +5,7 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 import EventCard from '../EventCard/EventCard'
 
 export class EventContainer extends Component {
-  constructor(props) {
+  constructor({props}) {
     super(props);
 
   }
@@ -13,7 +13,6 @@ export class EventContainer extends Component {
   // displayEvents = () => this.props.events.map(event => {
   //   return <div>{ ReactHtmlParser(event.desc) }</div>
   // })
-
   displayEvents = () => this.props.events.map(event => {
     return <EventCard {...event} />
   })
