@@ -1,8 +1,8 @@
-import { fetchBreweryData } from './apiCalls'
+import { fetchBreweryDataByLocation, fetchEventDataByLocation } from './apiCalls'
 
-export const eventCleaner = (events) => {
+export const eventCleaner = async (latitude, longitude) => {
+  const events = await fetchEventDataByLocation(latitude, longitude)
   return events.map(event => {
-    // console.log(event);
     let desc;
     let ven
     const { description, venue, group } = event
@@ -18,8 +18,8 @@ export const eventCleaner = (events) => {
   })
 }
 
-export const cleanBreweryData = async () => {
-  const fetchedBreweries = await fetchBreweryData()
+export const cleanBreweryData = async (latitude, longitude) => {
+  const fetchedBreweries = await fetchBreweryDataByLocation(latitude, longitude)
   console.log(fetchedBreweries)
 }
 cleanBreweryData()
