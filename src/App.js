@@ -18,6 +18,10 @@ class App extends Component {
     const cleanEvents = eventCleaner(result.events)
     console.log(cleanEvents)
     this.props.populateEvents(cleanEvents)
+    navigator.geolocation.getCurrentPosition(function(location) {
+      console.log(location.coords.latitude);
+      console.log(location.coords.longitude);
+    });
   }
   
   render() {
