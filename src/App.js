@@ -16,7 +16,7 @@ class App extends Component {
     const response = await fetch(url);
     const result = await response.json();
     const cleanEvents = eventCleaner(result.events)
-    // console.log(cleanEvents)
+    console.log(cleanEvents)
     this.props.populateEvents(cleanEvents)
   }
   
