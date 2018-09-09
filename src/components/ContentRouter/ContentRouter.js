@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 
 const ContentRouter = (props) => {
-
+ 
   return(
     <div>
     <header>
@@ -22,4 +22,4 @@ export const mapStateToProps = state => ({
   cardsProps: state.eventToView
 })
 
-export default connect(mapStateToProps, null)(ContentRouter);
+export default withRouter(connect(mapStateToProps, null)(ContentRouter));
