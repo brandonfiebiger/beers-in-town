@@ -8,6 +8,7 @@ import { Search } from './containers/Search';
 import ContentRouter from './components/ContentRouter/ContentRouter';
 import { populateFromLocation } from './actions/index';
 import { eventCleaner } from './utils/helper';
+import { EventInfo } from '../src/containers/EventInfo/EventInfo';
 
 class App extends Component {
   
@@ -15,7 +16,7 @@ class App extends Component {
     const response = await fetch(url);
     const result = await response.json();
     const cleanEvents = eventCleaner(result.events)
-    console.log(cleanEvents)
+    // console.log(cleanEvents)
     this.props.populateEvents(cleanEvents)
   }
   
@@ -27,6 +28,8 @@ class App extends Component {
         <Search />
         <section>
           <ContentRouter />
+          {/* <Route exact path={'/events/eventinfo'} render={() => <EventInfo time={'this.props'} />}/> */}
+
         </section>
       </div>
     );
