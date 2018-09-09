@@ -5,8 +5,13 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 
 export const EventInfo = (props) => {
   console.log(props)
+  const handleRoute = () => {
+    props.history.push('/events')
+  }
+
   return(
     <div>
+      <button onClick={() => handleRoute()}>events</button>
       <h1>{props.cardsProps.name}</h1>
       <h2>By: {props.cardsProps.groupName}</h2>
       <h3>At: {props.cardsProps.ven.name}</h3>
