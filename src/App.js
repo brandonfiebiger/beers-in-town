@@ -12,11 +12,9 @@ import { getLocation } from '../src/actions';
 
 class App extends Component {
   
-  async componentDidMount() {
-    navigator.geolocation.getCurrentPosition( async (location) => {
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((location) => {
       this.props.getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
-      await this.props.populateEvents(location.coords.latitude, location.coords.longitude)
-      await this.props.populateBreweries(location.coords.latitude, location.coords.longitude)
     });
   }
   

@@ -4,16 +4,22 @@ import  EventContainer  from '../../containers/EventContainer/EventContainer';
 import BreweryContainer  from '../../containers/BreweryContainer/BreweryContainer';
 import EventInfo from '../../containers/EventInfo/EventInfo';
 import { connect } from 'react-redux';
+import { fetchBreweryDataByLocation } from '../../thunks/fetchBreweryDataByLocation';
+import { fetchEventDataByLocation } from '../../thunks/fetchEventDataByLocation';
 
 
 const ContentRouter = (props) => {
 
-  const handleBreweryRoute = () => {
-    props.history.push('/breweries')
+  const handleBreweryRoute = async () => {
+    const { location, populateBreweries, history } = props;
+    await populateBreweries(location.latitude, location.longitude);
+    history.push('/breweries');
   }
 
-  const handleEventRoute = () => {
-    props.history.push('/events')
+  const handleEventRoute = async () => {
+    const { location, populateEvents, history } = props;
+    await populateEvents(location.latitude, location.longitude);
+    history.push('/events');
   }
 
 
@@ -31,7 +37,13 @@ const ContentRouter = (props) => {
 }
 
 export const mapStateToProps = state => ({
-  cardsProps: state.eventToView
+  cardsProps: state.eventToView,
+  location: state.location
 })
 
-export default withRouter(connect(mapStateToProps, null)(ContentRouter));
+export const mapDispatchToProps = dispatch => ({
+  populateEvents: (latitude, longitude) => dispatch(fetchEventDataByLocation(latitude, longitude)),
+  populateBreweries: (latitude, longitude) => dispatch(fetchBreweryDataByLocation(latitude, longitude))
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ContentRouter));
