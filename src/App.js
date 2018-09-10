@@ -15,8 +15,20 @@ class App extends Component {
   componentDidMount() {
     navigator.geolocation.getCurrentPosition((location) => {
       this.props.getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
+      this.callBackendAPI()
     });
   }
+
+
+  callBackendAPI = async () => {
+    const response = await fetch('/express_backend');
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error(body.message) 
+    }
+    return body;
+  };
   
   render() {
 
