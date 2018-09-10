@@ -4,7 +4,6 @@ export const populateEventsFromLocation = events => ({
 })
 
 export const getPropsFromEvent = eventProps => ({
-  
   type: 'EVENT_TO_VIEW',
   eventProps
 })
@@ -17,4 +16,9 @@ export const populateBreweriesFromLocation = breweries => ({
 export const getLocation = location => ({
   type: 'LOCATION_AVAILABLE',
   location
+})
+
+export const populateGroupsFromLocation = groups => ({
+  type: 'GROUPS_FROM_LOCATION',
+  groups
 })

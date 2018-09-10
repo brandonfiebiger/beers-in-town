@@ -8,6 +8,7 @@ import ContentRouter from './components/ContentRouter/ContentRouter';
 import { fetchEventDataByLocation } from '../src/thunks/fetchEventDataByLocation';
 import { fetchBreweryDataByLocation } from '../src/thunks/fetchBreweryDataByLocation';
 import { getLocation } from '../src/actions';
+import { fetchGroupDataByLocation } from '../src/thunks/fetchGroupDataByLocation';
 
 
 class App extends Component {
@@ -15,8 +16,8 @@ class App extends Component {
   componentDidMount() {
     navigator.geolocation.getCurrentPosition((location) => {
       this.props.getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
-      this.callBackendAPI()
     });
+    this.callBackendAPI()
   }
 
 
