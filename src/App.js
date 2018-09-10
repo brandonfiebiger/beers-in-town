@@ -33,8 +33,6 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  populateEvents: (latitude, longitude) => dispatch(fetchEventDataByLocation(latitude, longitude)),
-  populateBreweries: (latitude, longitude) => dispatch(fetchBreweryDataByLocation(latitude, longitude)),
   getUserLocation: (location) => dispatch(getLocation(location))
 })
 
