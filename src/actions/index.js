@@ -8,3 +8,8 @@ export const getPropsFromEvent = eventProps => ({
   type: 'EVENT_TO_VIEW',
   eventProps
 })
+
+export const populateBreweriesFromLocation = breweries => ({
+  type: 'BREWERIES_FROM_LOCATION',
+  breweries
+})
