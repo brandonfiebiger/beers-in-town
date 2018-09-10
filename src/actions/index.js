@@ -1,4 +1,4 @@
-export const populateFromLocation = events => ({
+export const populateEventsFromLocation = events => ({
     type: 'EVENTS_FROM_LOCATION',
     events
 })

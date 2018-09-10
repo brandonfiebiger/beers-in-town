@@ -21,5 +21,5 @@ export const eventCleaner = async (latitude, longitude) => {
 export const cleanBreweryData = async (latitude, longitude) => {
   const fetchedBreweries = await fetchBreweryDataByLocation(latitude, longitude)
   console.log(fetchedBreweries)
+  
 }
-cleanBreweryData()
