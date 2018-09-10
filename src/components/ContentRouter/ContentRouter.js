@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, withRouter, NavLink } from 'react-router-dom';
 import  EventContainer  from '../../containers/EventContainer/EventContainer';
-import { BreweryContainer } from '../../containers/BreweryContainer/BreweryContainer';
+import BreweryContainer  from '../../containers/BreweryContainer/BreweryContainer';
 import EventInfo from '../../containers/EventInfo/EventInfo';
 import { connect } from 'react-redux';
 
