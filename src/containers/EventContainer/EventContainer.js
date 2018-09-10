@@ -10,9 +10,6 @@ export class EventContainer extends Component {
 
   }
 
-  // displayEvents = () => this.props.events.map(event => {
-  //   return <div>{ ReactHtmlParser(event.desc) }</div>
-  // })
   displayEvents = () => this.props.events.map(event => {
     return <EventCard {...event} />
   })
