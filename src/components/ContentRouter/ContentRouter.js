@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 const ContentRouter = (props) => {
 
   const handleBreweryRoute = () => {
-    props.history.push('./breweries')
+    props.history.push('/breweries')
   }
 
   const handleEventRoute = () => {
