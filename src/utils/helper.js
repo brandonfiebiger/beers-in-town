@@ -1,7 +1,6 @@
 import { fetchBreweryDataByLocation, fetchEventDataByLocation } from './apiCalls'
 
-export const eventCleaner = async (latitude, longitude) => {
-  const events = await fetchEventDataByLocation(latitude, longitude)
+export const eventCleaner = (events) => {
   return events.map(event => {
     let desc;
     let ven
@@ -21,5 +20,5 @@ export const eventCleaner = async (latitude, longitude) => {
 export const cleanBreweryData = async (latitude, longitude) => {
   const fetchedBreweries = await fetchBreweryDataByLocation(latitude, longitude)
   console.log(fetchedBreweries)
-  
+
 }

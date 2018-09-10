@@ -5,20 +5,18 @@ import PropTypes from 'prop-types';
 import './App.css';
 import { Search } from './containers/Search';
 import ContentRouter from './components/ContentRouter/ContentRouter';
-import { populateEventsFromLocation } from './actions/index';
-import { eventCleaner, cleanBreweryData } from './utils/helper';
+import { cleanBreweryData } from './utils/helper';
+import { fetchEventDataByLocation } from '../src/thunks/fetchEventDataByLocation';
 
 
 class App extends Component {
   
   async componentDidMount() {
-    let cleanEvents;
     let cleanBreweries;
     navigator.geolocation.getCurrentPosition( async (location) => {
-      cleanEvents = await eventCleaner(location.coords.latitude, location.coords.longitude)
       cleanBreweries = await cleanBreweryData(location.coords.latitude, location.coords.longitude)
       console.log(cleanBreweries);
-      this.props.populateEvents(cleanEvents)
+      await this.props.populateEvents(location.coords.latitude, location.coords.longitude)
     });
   }
   
@@ -37,7 +35,7 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  populateEvents: events => dispatch(populateEventsFromLocation(events))
+  populateEvents: (latitude, longitude) => dispatch(fetchEventDataByLocation(latitude, longitude))
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(App));
