@@ -6,15 +6,15 @@ import './App.css';
 import { Search } from './containers/Search';
 import ContentRouter from './components/ContentRouter/ContentRouter';
 import { fetchEventDataByLocation } from '../src/thunks/fetchEventDataByLocation';
-import { fetchBreweryDataByLocation } from '../src/thunks/fetchBreweryDataByLocation'
+import { fetchBreweryDataByLocation } from '../src/thunks/fetchBreweryDataByLocation';
+import { getLocation } from '../src/actions';
 
 
 class App extends Component {
   
-  async componentDidMount() {
-    navigator.geolocation.getCurrentPosition( async (location) => {
-      await this.props.populateEvents(location.coords.latitude, location.coords.longitude)
-      await this.props.populateBreweries(location.coords.latitude, location.coords.longitude)
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((location) => {
+      this.props.getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
     });
   }
   
@@ -33,8 +33,7 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  populateEvents: (latitude, longitude) => dispatch(fetchEventDataByLocation(latitude, longitude)),
-  populateBreweries: (latitude, longitude) => dispatch(fetchBreweryDataByLocation(latitude, longitude))
+  getUserLocation: (location) => dispatch(getLocation(location))
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

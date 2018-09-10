@@ -18,7 +18,7 @@ export class BreweryCard extends Component {
         <h4>{ city }, { state }</h4>
         <h5>{ address_1 }</h5>
         <h6>{ phone }</h6>
-        <h3>rating {rating} out of 5</h3>
+        <h3>rating {Number.parseFloat(rating).toFixed(2)} out of 5</h3>
       </section>
     )
   }

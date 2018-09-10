@@ -13,3 +13,8 @@ export const populateBreweriesFromLocation = breweries => ({
   type: 'BREWERIES_FROM_LOCATION',
   breweries
 })
+
+export const getLocation = location => ({
+  type: 'LOCATION_AVAILABLE',
+  location
+})

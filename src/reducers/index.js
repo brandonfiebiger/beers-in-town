@@ -2,11 +2,13 @@ import { combineReducers } from 'redux';
 import { eventReducer } from './event-reducer';
 import { breweryReducer } from './brewery-reducer';
 import { eventToViewReducer } from './eventToView-reducer';
+import { locationReducer } from './location-reducer';
 
 const rootReducer = combineReducers({
   events: eventReducer,
   breweries: breweryReducer,
-  eventToView: eventToViewReducer
+  eventToView: eventToViewReducer,
+  location: locationReducer
 })
 
 export default rootReducer;
