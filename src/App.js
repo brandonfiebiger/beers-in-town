@@ -8,15 +8,31 @@ import ContentRouter from './components/ContentRouter/ContentRouter';
 import { fetchEventDataByLocation } from '../src/thunks/fetchEventDataByLocation';
 import { fetchBreweryDataByLocation } from '../src/thunks/fetchBreweryDataByLocation';
 import { getLocation } from '../src/actions';
+import { fetchGroupDataByLocation } from '../src/thunks/fetchGroupDataByLocation';
+import { populateGroupsFromLocation } from '../src/actions'
 
 
 class App extends Component {
   
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition((location) => {
+  async componentDidMount() {
+    navigator.geolocation.getCurrentPosition( async (location) => {
       this.props.getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
+      const groups = await fetchGroupDataByLocation(location.coords.latitude, location.coords.longitude);
+      // this.props.getGroups(groups)
     });
+    this.callBackendAPI()
   }
+
+
+  callBackendAPI = async () => {
+    const response = await fetch('/express_backend');
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error(body.message) 
+    }
+    return body;
+  };
   
   render() {
 
@@ -33,7 +49,8 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  getUserLocation: (location) => dispatch(getLocation(location))
+  getUserLocation: (location) => dispatch(getLocation(location)),
+  // getGroups: groups => dispatch(populateGroupsFromLocation(groups))
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

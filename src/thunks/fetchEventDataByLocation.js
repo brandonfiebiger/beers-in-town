@@ -14,3 +14,5 @@ export const fetchEventDataByLocation = (latitude, longitude) => {
     }
   }
 }
+
+
