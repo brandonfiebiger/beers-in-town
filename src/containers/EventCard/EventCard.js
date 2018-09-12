@@ -13,7 +13,6 @@ class EventCard extends Component {
   }
 
   handleClick = () => {
-    console.log(this.props)
     this.props.sendPropsFromCard(this.props)
   }
 
