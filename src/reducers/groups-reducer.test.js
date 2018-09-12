@@ -1,21 +1,20 @@
-import { groupReducer } from './group-reducer';
+import { groupsReducer } from './groups-reducer';
 import * as actions from '../actions';
-// import { mockgroupStateData } from '../utils/mockData';
 
 
-describe('groupReducer', () => {
+describe('groupsReducer', () => {
   it('should return intial state by default', () => {
     const expected = [];
-    const result = groupReducer(undefined, []);
+    const result = groupsReducer(undefined, []);
 
     expect(result).toEqual(expected);
   })
 
-  it('should return an array containing all of the breweries if action BREWERIES_FROM_LOCATION is passed in', () => {
-    const expected = [mockgroupStateData];
-    const action = { type: 'GROUPS_FROM_LOCATION', groups: [mockgroupStateData] };
+  it('should return an array containing all of the breweries if action GROUPS_FROM_LOCATION is passed in', () => {
+    const expected = ['groups'];
+    const action = { type: 'GROUPS_FROM_LOCATION', groups: expected };
 
-    const result = groupReducer([], action);
+    const result = groupsReducer([], action);
 
     expect(result).toEqual(expected);
   })
