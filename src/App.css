@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  background: #3D518C;
+  height: 100vh;
+  margin: 0;
+  overflow: scroll;
+}
+
+h1 {
+  margin: 0;
 }
 
 .App-logo {
