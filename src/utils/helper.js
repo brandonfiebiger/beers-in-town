@@ -22,3 +22,25 @@ export const cleanBreweryData = async (latitude, longitude) => {
   console.log(fetchedBreweries)
 
 }
+
+export const cleanGroupData = (unCleanEvents) => {
+  return unCleanEvents.map(event => {
+    return {
+      name: event.name,
+      id: event.id,
+      status: event.status,
+      urlname: event.urlname,
+      description: event.description,
+      city: event.city,
+      state: event.state,
+      members: event.members,
+      group_photo: event.group_photo,
+      key_photo: event.key_photo,
+      category: event.category,
+      organizer: event.organizer,
+      next_event: event.next_event,
+      photo: event.photo,
+      country: event.country
+    }
+  })
+}

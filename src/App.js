@@ -9,7 +9,8 @@ import { fetchEventDataByLocation } from '../src/thunks/fetchEventDataByLocation
 import { fetchBreweryDataByLocation } from '../src/thunks/fetchBreweryDataByLocation';
 import { getLocation } from '../src/actions';
 import { fetchGroupDataByLocation } from '../src/thunks/fetchGroupDataByLocation';
-import { populateGroupsFromLocation } from '../src/actions'
+import { populateGroupsFromLocation } from '../src/actions';
+import { cleanGroupData } from '../src/utils/helper'
 
 
 class App extends Component {
@@ -18,9 +19,10 @@ class App extends Component {
     navigator.geolocation.getCurrentPosition( async (location) => {
       this.props.getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
       const groups = await fetchGroupDataByLocation(location.coords.latitude, location.coords.longitude);
-      // this.props.getGroups(groups)
+      const cleanGroups = cleanGroupData(groups);
+      this.props.getGroups(cleanGroups)
     });
-    this.callBackendAPI()
+    // this.callBackendAPI()
   }
 
 
@@ -50,7 +52,7 @@ class App extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   getUserLocation: (location) => dispatch(getLocation(location)),
-  // getGroups: groups => dispatch(populateGroupsFromLocation(groups))
+  getGroups: groups => dispatch(populateGroupsFromLocation(groups))
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

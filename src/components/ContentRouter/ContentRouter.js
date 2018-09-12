@@ -4,6 +4,7 @@ import  EventContainer  from '../../containers/EventContainer/EventContainer';
 import BreweryContainer  from '../../containers/BreweryContainer/BreweryContainer';
 import GroupsContainer from '../../containers/GroupsContainer/GroupsContainer';
 import EventInfo from '../../containers/EventInfo/EventInfo';
+import GroupInfo from '../../containers/GroupInfo/GroupInfo';
 import { connect } from 'react-redux';
 import { fetchBreweryDataByLocation } from '../../thunks/fetchBreweryDataByLocation';
 import { fetchEventDataByLocation } from '../../thunks/fetchEventDataByLocation';
@@ -43,13 +44,15 @@ const ContentRouter = (props) => {
       <Route exact path= '/events' component={EventContainer} />
       <Route exact path= '/breweries' component={BreweryContainer} />
       <Route exact path= '/groups' component={GroupsContainer} />
-      <Route exact path={`/events/${props.cardsProps.id}`} render={() => <EventInfo {...props} />}/>
+      <Route exact path={`/events/${props.eventProps.id}`} render={() => <EventInfo {...props} />}/>
+      <Route exact path={`/groups/${props.groupProps.id}`} render={() => <GroupInfo {...props} />}/>
     </div>
   )
 }
 
 export const mapStateToProps = state => ({
-  cardsProps: state.eventToView,
+  eventProps: state.eventToView,
+  groupProps: state.groupToView,
   location: state.location
 })
 

@@ -4,13 +4,15 @@ import { breweryReducer } from './brewery-reducer';
 import { eventToViewReducer } from './eventToView-reducer';
 import { locationReducer } from './location-reducer';
 import { groupsReducer } from './groups-reducer';
+import { groupToViewReducer } from './groupToView-reducer';
 
 const rootReducer = combineReducers({
   events: eventReducer,
   breweries: breweryReducer,
   eventToView: eventToViewReducer,
   location: locationReducer,
-  groups: groupsReducer
+  groups: groupsReducer,
+  groupToView: groupToViewReducer
 })
 
 export default rootReducer;

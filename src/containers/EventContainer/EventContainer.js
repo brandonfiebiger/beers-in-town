@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-import EventCard from '../EventCard/EventCard'
+import EventCard from '../EventCard/EventCard';
+import './EventContainer.css'
 
 export class EventContainer extends Component {
   constructor({props}) {
@@ -16,7 +17,7 @@ export class EventContainer extends Component {
 
   render() {
     return(
-      <section>
+      <section className="EventContainer">
       {this.displayEvents()}
       </section>
     )
