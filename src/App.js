@@ -20,10 +20,9 @@ class App extends Component {
       this.props.getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
       const groups = await fetchGroupDataByLocation(location.coords.latitude, location.coords.longitude);
       const cleanGroups = cleanGroupData(groups);
-      console.log(cleanGroups)
-      this.props.getGroups(groups)
+      this.props.getGroups(cleanGroups)
     });
-    this.callBackendAPI()
+    // this.callBackendAPI()
   }
 
 

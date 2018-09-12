@@ -8,6 +8,11 @@ export const getPropsFromEvent = eventProps => ({
   eventProps
 })
 
+export const getPropsFromGroup = groupProps => ({
+  type: 'GROUP_TO_VIEW',
+  groupProps
+})
+
 export const populateBreweriesFromLocation = breweries => ({
   type: 'BREWERIES_FROM_LOCATION',
   breweries
@@ -22,3 +27,4 @@ export const populateGroupsFromLocation = groups => ({
   type: 'GROUPS_FROM_LOCATION',
   groups
 })
+
