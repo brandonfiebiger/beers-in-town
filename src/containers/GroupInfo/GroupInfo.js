@@ -6,7 +6,7 @@ export const GroupInfo = (props) => {
 
   return(
     <section>
-      {props.groupProps.name}
+      <h2>{props.groupProps.name}</h2>
     </section>
   )
 }
