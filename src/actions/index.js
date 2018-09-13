@@ -3,6 +3,11 @@ export const populateEventsFromLocation = events => ({
     events
 })
 
+export const populateEventsFromSearch = events => ({
+  type: 'EVENTS_FROM_SEARCH',
+  events
+})
+
 export const getPropsFromEvent = eventProps => ({
   type: 'EVENT_TO_VIEW',
   eventProps
