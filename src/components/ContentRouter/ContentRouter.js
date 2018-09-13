@@ -13,23 +13,21 @@ import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation'
 
 const ContentRouter = (props) => {
 
-  const handleBreweryRoute = async () => {
+  const handleBreweryRoute = () => {
     const { location, populateBreweries, history } = props;
-    await populateBreweries(location.latitude, location.longitude);
+    populateBreweries(location.latitude, location.longitude);
     history.push('/breweries');
   }
 
-  const handleEventRoute = async () => {
+  const handleEventRoute = () => {
     const { location, populateEvents, history } = props;
-    await populateEvents(location.latitude, location.longitude);
+    populateEvents(location.latitude, location.longitude);
     history.push('/events');
   }
 
-  const handleGroupsRoute = async () => {
+  const handleGroupsRoute = () => {
     const { location, populateGroups, history } = props;
-    // console.log(location)
-    // await fetchGroupDataByLocation(location.latitude, location.longitude)
-    // await populateGroups(location.latitude, location.longitude);
+    populateGroups(location.latitude, location.longitude);
     history.push('/groups')
   }
 
