@@ -14,8 +14,10 @@ import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation'
 const ContentRouter = (props) => {
 
   const handleBreweryRoute = () => {
-    const { location, populateBreweries, history } = props;
-    populateBreweries(location.latitude, location.longitude);
+    const { location, populateBreweries, history, breweries } = props;
+    if (!breweries) {
+      populateBreweries(location.latitude, location.longitude);
+    }
     history.push('/breweries');
   }
 
@@ -28,8 +30,10 @@ const ContentRouter = (props) => {
   }
 
   const handleGroupsRoute = () => {
-    const { location, populateGroups, history } = props;
-    populateGroups(location.latitude, location.longitude);
+    const { location, populateGroups, history, groups } = props;
+    if (!groups) {
+      populateGroups(location.latitude, location.longitude);
+    }
     history.push('/groups')
   }
 
@@ -54,7 +58,9 @@ export const mapStateToProps = state => ({
   eventProps: state.eventToView,
   groupProps: state.groupToView,
   location: state.location,
-  events: state.events
+  events: state.events,
+  groups: state.groups,
+  breweries: state.breweries
 })
 
 export const mapDispatchToProps = dispatch => ({

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { fetchEventDataBySearch } from '../thunks/fetchEventDataBySearch';
+import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
+import { fetchBreweryDataBySearch } from '../thunks/fetchBreweryDataBySearch';
 import { connect } from 'react-redux';
 
 export class Search extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.state = {
       city: '',
       state: ''
@@ -21,7 +22,10 @@ export class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    const { city, state } = this.state
     this.props.getEvents(this.state.city, this.state.state)
+    this.props.getGroups(this.state.city, this.state.state)
+    this.props.getBreweries(this.state.city, this.state.state)
   }
 
 
@@ -37,7 +41,9 @@ export class Search extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getEvents: (city, state) => dispatch(fetchEventDataBySearch(city, state))
+  getEvents: (city, state) => dispatch(fetchEventDataBySearch(city, state)),
+  getGroups: (city, state) => dispatch(fetchGroupDataBySearch(city, state)),
+  getBreweries: (city, state) => dispatch(fetchBreweryDataBySearch(city,state))
 })
 
 export default connect(null, mapDispatchToProps)(Search);
