@@ -7,7 +7,8 @@ export class Search extends Component {
     super(props);
     console.log(this.props)
     this.state = {
-      location: ''
+      city: '',
+      state: ''
     }
   }
 
@@ -20,14 +21,15 @@ export class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.getEvents(this.state.location)
+    this.props.getEvents(this.state.city, this.state.state)
   }
 
 
   render() {
     return(
       <form onSubmit={ this.handleSubmit } >
-        <input name='location' value={this.state.location} onChange={this.handleChange}/>
+        <input name='city' value={this.state.city} onChange={this.handleChange}/>
+        <input name='state' value={this.state.state} onChange={this.handleChange}/>
         <button>Search</button>
       </form>
     )
@@ -35,7 +37,7 @@ export class Search extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getEvents: location => dispatch(fetchEventDataBySearch(location))
+  getEvents: (city, state) => dispatch(fetchEventDataBySearch(city, state))
 })
 
 export default connect(null, mapDispatchToProps)(Search);
