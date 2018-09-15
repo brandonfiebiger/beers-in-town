@@ -8,7 +8,6 @@ export class BreweryContainer extends Component {
   constructor(props) {
     super(props);
     
-    console.log(BreweryCard)
   }
   
   displayBreweries = () => this.props.breweries.map(brewery => {

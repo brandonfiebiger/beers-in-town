@@ -25,7 +25,7 @@ class EventCard extends Component {
      <p>{date}</p>
      <p>{time}</p>
      <h3>{groupName}</h3>
-     <h4>{ven.name}</h4>
+     {ven ? <h4>{ven.name}</h4>: ''}
      <NavLink onClick={this.handleClick} to={`/events/${id}`} className='nav'>event info</NavLink>
     </section>
     )

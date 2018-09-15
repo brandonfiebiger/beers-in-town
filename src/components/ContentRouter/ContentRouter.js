@@ -13,23 +13,27 @@ import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation'
 
 const ContentRouter = (props) => {
 
-  const handleBreweryRoute = async () => {
-    const { location, populateBreweries, history } = props;
-    await populateBreweries(location.latitude, location.longitude);
+  const handleBreweryRoute = () => {
+    const { location, populateBreweries, history, breweries } = props;
+    if (!breweries) {
+      populateBreweries(location.latitude, location.longitude);
+    }
     history.push('/breweries');
   }
 
-  const handleEventRoute = async () => {
-    const { location, populateEvents, history } = props;
-    await populateEvents(location.latitude, location.longitude);
+  const handleEventRoute = () => {
+    const { location, populateEvents, history, events } = props;
+    if (!events) {
+      populateEvents(location.latitude, location.longitude);
+    }
     history.push('/events');
   }
 
-  const handleGroupsRoute = async () => {
-    const { location, populateGroups, history } = props;
-    // console.log(location)
-    // await fetchGroupDataByLocation(location.latitude, location.longitude)
-    // await populateGroups(location.latitude, location.longitude);
+  const handleGroupsRoute = () => {
+    const { location, populateGroups, history, groups } = props;
+    if (!groups) {
+      populateGroups(location.latitude, location.longitude);
+    }
     history.push('/groups')
   }
 
@@ -53,7 +57,10 @@ const ContentRouter = (props) => {
 export const mapStateToProps = state => ({
   eventProps: state.eventToView,
   groupProps: state.groupToView,
-  location: state.location
+  location: state.location,
+  events: state.events,
+  groups: state.groups,
+  breweries: state.breweries
 })
 
 export const mapDispatchToProps = dispatch => ({

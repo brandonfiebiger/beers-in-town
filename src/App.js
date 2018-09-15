@@ -3,38 +3,25 @@ import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './App.css';
-import { Search } from './containers/Search';
+import Search  from './containers/Search';
 import ContentRouter from './components/ContentRouter/ContentRouter';
 import { fetchEventDataByLocation } from '../src/thunks/fetchEventDataByLocation';
 import { fetchBreweryDataByLocation } from '../src/thunks/fetchBreweryDataByLocation';
 import { getLocation } from '../src/actions';
 import { fetchGroupDataByLocation } from '../src/thunks/fetchGroupDataByLocation';
-import { populateGroupsFromLocation } from '../src/actions';
 import { cleanGroupData } from '../src/utils/helper'
 
 
 class App extends Component {
   
-  async componentDidMount() {
+  componentDidMount() {
+    const { getGroups, getUserLocation } = this.props
     navigator.geolocation.getCurrentPosition( async (location) => {
-      this.props.getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
-      const groups = await fetchGroupDataByLocation(location.coords.latitude, location.coords.longitude);
-      const cleanGroups = cleanGroupData(groups);
-      this.props.getGroups(cleanGroups)
+      getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
     });
-    // this.callBackendAPI()
+
   }
 
-
-  callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message) 
-    }
-    return body;
-  };
   
   render() {
 
@@ -52,7 +39,7 @@ class App extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   getUserLocation: (location) => dispatch(getLocation(location)),
-  getGroups: groups => dispatch(populateGroupsFromLocation(groups))
+  getGroups: (latitude, longitude) => dispatch(fetchGroupDataByLocation(latitude, longitude))
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

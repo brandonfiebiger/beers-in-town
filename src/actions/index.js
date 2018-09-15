@@ -3,6 +3,11 @@ export const populateEventsFromLocation = events => ({
     events
 })
 
+export const populateEventsFromSearch = events => ({
+  type: 'EVENTS_FROM_SEARCH',
+  events
+})
+
 export const getPropsFromEvent = eventProps => ({
   type: 'EVENT_TO_VIEW',
   eventProps
@@ -18,6 +23,11 @@ export const populateBreweriesFromLocation = breweries => ({
   breweries
 })
 
+export const populateBreweriesFromSearch = breweries => ({
+  type: 'BREWERIES_FROM_SEARCH',
+  breweries
+})
+
 export const getLocation = location => ({
   type: 'LOCATION_AVAILABLE',
   location
@@ -25,6 +35,11 @@ export const getLocation = location => ({
 
 export const populateGroupsFromLocation = groups => ({
   type: 'GROUPS_FROM_LOCATION',
+  groups
+})
+
+export const populateGroupsFromSearch = groups => ({
+  type: 'GROUPS_FROM_SEARCH',
   groups
 })
 

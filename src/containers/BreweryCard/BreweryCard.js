@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 export class BreweryCard extends Component {
   constructor(props) {
     super(props);
-    console.log(props)
   }
 
 
