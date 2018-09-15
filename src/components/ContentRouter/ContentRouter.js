@@ -20,8 +20,10 @@ const ContentRouter = (props) => {
   }
 
   const handleEventRoute = () => {
-    const { location, populateEvents, history } = props;
-    populateEvents(location.latitude, location.longitude);
+    const { location, populateEvents, history, events } = props;
+    if (!events) {
+      populateEvents(location.latitude, location.longitude);
+    }
     history.push('/events');
   }
 
@@ -51,7 +53,8 @@ const ContentRouter = (props) => {
 export const mapStateToProps = state => ({
   eventProps: state.eventToView,
   groupProps: state.groupToView,
-  location: state.location
+  location: state.location,
+  events: state.events
 })
 
 export const mapDispatchToProps = dispatch => ({
