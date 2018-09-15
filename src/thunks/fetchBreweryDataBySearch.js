@@ -8,7 +8,8 @@ export const fetchBreweryDataBySearch = (city, state) => {
       const breweries = await response.json();
       dispatch(populateBreweriesFromSearch(breweries.results))
     } catch (error) {
-       throw new Error(error.message)
+      //  throw new Error(error.message)
+      alert('you fucked up')
     }
   }
 }

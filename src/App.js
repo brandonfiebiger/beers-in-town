@@ -19,7 +19,6 @@ class App extends Component {
     navigator.geolocation.getCurrentPosition( async (location) => {
       getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
     });
-
   }
 
   

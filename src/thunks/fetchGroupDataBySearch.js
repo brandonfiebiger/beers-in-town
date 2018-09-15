@@ -11,7 +11,8 @@ export const fetchGroupDataBySearch = (city, state) => {
       const cleanedGroups = await cleanGroupData(groups.results);
       dispatch(populateGroupsFromSearch(cleanedGroups))
     } catch (error) {
-      throw new Error(error.message)
+      // throw new Error(error.message)
+      alert('you fucked up')
     }
   }
 }

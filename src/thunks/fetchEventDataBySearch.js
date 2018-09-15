@@ -10,7 +10,8 @@ export const fetchEventDataBySearch = (city, state) => {
       const cleanEvents = await eventCleaner(events.results);
       dispatch(populateEventsFromSearch(cleanEvents))
     } catch (error) {
-       throw new Error(error.message)
+      //  throw new Error(error.message)
+      alert('you fucked up')
     }
   }
 }

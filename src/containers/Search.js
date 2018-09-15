@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchEventDataBySearch } from '../thunks/fetchEventDataBySearch';
 import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
 import { fetchBreweryDataBySearch } from '../thunks/fetchBreweryDataBySearch';
+import { Route, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 export class Search extends Component {
@@ -26,6 +27,7 @@ export class Search extends Component {
     this.props.getEvents(this.state.city, this.state.state)
     this.props.getGroups(this.state.city, this.state.state)
     this.props.getBreweries(this.state.city, this.state.state)
+    this.props.history.push('/events')
   }
 
 
@@ -46,4 +48,4 @@ const mapDispatchToProps = dispatch => ({
   getBreweries: (city, state) => dispatch(fetchBreweryDataBySearch(city,state))
 })
 
-export default connect(null, mapDispatchToProps)(Search);
+export default withRouter(connect(null, mapDispatchToProps)(Search));
