@@ -1495,3 +1495,70 @@ export const mockBreweryStateData = [
       "id": 24459082
   }
 ]
+
+
+export const mockCleanedGroups = [ { name: undefined,
+    id: undefined,
+    status: undefined,
+    urlname: undefined,
+    description: undefined,
+    city: undefined,
+    state: undefined,
+    members: undefined,
+    group_photo: undefined,
+    key_photo: undefined,
+    category: undefined,
+    organizer: undefined,
+    next_event: undefined,
+    photo: undefined,
+    country: undefined },
+  { name: undefined,
+    id: undefined,
+    status: undefined,
+    urlname: undefined,
+    description: undefined,
+    city: undefined,
+    state: undefined,
+    members: undefined,
+    group_photo: undefined,
+    key_photo: undefined,
+    category: undefined,
+    organizer: undefined,
+    next_event: undefined,
+    photo: undefined,
+    country: undefined },
+  { name: undefined,
+    id: undefined,
+    status: undefined,
+    urlname: undefined,
+    description: undefined,
+    city: undefined,
+    state: undefined,
+    members: undefined,
+    group_photo: undefined,
+    key_photo: undefined,
+    category: undefined,
+    organizer: undefined,
+    next_event: undefined,
+    photo: undefined,
+    country: undefined } ]
+
+
+    export const mockEventProps = {
+        name: 'Brandon',
+        groupName: 'the cool people',
+        ven: {
+            name: 'cool spot'
+        },
+        date: 'Tomorrow',
+        time: 4,
+        desc: 'Really good'
+    }
+
+    export const mockEventPropsWithoutVenue = {
+        name: 'Brandon',
+        groupName: 'the cool people',
+        date: 'Tomorrow',
+        time: 4,
+        desc: 'Really good'
+    }

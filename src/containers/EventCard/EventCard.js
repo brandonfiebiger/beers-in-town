@@ -7,7 +7,7 @@ import  EventInfo  from '../EventInfo/EventInfo';
 import { getPropsFromEvent } from '../../actions/index';
 import './EventCard.css'
 
-class EventCard extends Component {
+export class EventCard extends Component {
   constructor(props) {
     super(props);
 

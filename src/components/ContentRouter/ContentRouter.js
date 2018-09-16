@@ -11,11 +11,11 @@ import { fetchEventDataByLocation } from '../../thunks/fetchEventDataByLocation'
 import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation';
 
 
-const ContentRouter = (props) => {
+export const ContentRouter = (props) => {
 
   const handleBreweryRoute = () => {
     const { location, populateBreweries, history, breweries } = props;
-    if (!breweries) {
+    if (!breweries.length) {
       populateBreweries(location.latitude, location.longitude);
     }
     history.push('/breweries');
@@ -23,7 +23,7 @@ const ContentRouter = (props) => {
 
   const handleEventRoute = () => {
     const { location, populateEvents, history, events } = props;
-    if (!events) {
+    if (!events.length) {
       populateEvents(location.latitude, location.longitude);
     }
     history.push('/events');
@@ -31,7 +31,7 @@ const ContentRouter = (props) => {
 
   const handleGroupsRoute = () => {
     const { location, populateGroups, history, groups } = props;
-    if (!groups) {
+    if (!groups.length) {
       populateGroups(location.latitude, location.longitude);
     }
     history.push('/groups')

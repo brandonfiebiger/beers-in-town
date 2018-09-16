@@ -12,14 +12,13 @@ import { fetchGroupDataByLocation } from '../src/thunks/fetchGroupDataByLocation
 import { cleanGroupData } from '../src/utils/helper'
 
 
-class App extends Component {
+export class App extends Component {
   
   componentDidMount() {
     const { getGroups, getUserLocation } = this.props
     navigator.geolocation.getCurrentPosition( async (location) => {
       getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
     });
-
   }
 
   
@@ -39,7 +38,12 @@ class App extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   getUserLocation: (location) => dispatch(getLocation(location)),
-  getGroups: (latitude, longitude) => dispatch(fetchGroupDataByLocation(latitude, longitude))
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(App));
+
+
+App.propTypes = {
+  getUserLocation: PropTypes.func,
+  getGroups: PropTypes.func
+};
