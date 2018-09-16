@@ -42,7 +42,7 @@ export class Search extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getEvents: (city, state) => dispatch(fetchEventDataBySearch(city, state)),
   getGroups: (city, state) => dispatch(fetchGroupDataBySearch(city, state)),
   getBreweries: (city, state) => dispatch(fetchBreweryDataBySearch(city,state))
