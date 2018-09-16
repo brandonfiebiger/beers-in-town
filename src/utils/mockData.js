@@ -1542,3 +1542,23 @@ export const mockCleanedGroups = [ { name: undefined,
     next_event: undefined,
     photo: undefined,
     country: undefined } ]
+
+
+    export const mockEventProps = {
+        name: 'Brandon',
+        groupName: 'the cool people',
+        ven: {
+            name: 'cool spot'
+        },
+        date: 'Tomorrow',
+        time: 4,
+        desc: 'Really good'
+    }
+
+    export const mockEventPropsWithoutVenue = {
+        name: 'Brandon',
+        groupName: 'the cool people',
+        date: 'Tomorrow',
+        time: 4,
+        desc: 'Really good'
+    }
