@@ -1,0 +1,21 @@
+header button {
+  height: 2rem;
+  width: 7rem;
+  margin-top: 1rem;
+  text-decoration: underline;
+  font-size: 1.3rem;
+  background: #ada397;
+  box-shadow: 0 0 10px #000000;
+}
+
+header {
+  display: flex;
+  margin: 0 auto;
+  width: 22rem;
+  justify-content: space-around;
+}
+
+input {
+  height: 1.4rem;
+  margin-right: .2rem;
+}
