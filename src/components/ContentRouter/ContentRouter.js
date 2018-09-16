@@ -11,7 +11,7 @@ import { fetchEventDataByLocation } from '../../thunks/fetchEventDataByLocation'
 import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation';
 
 
-const ContentRouter = (props) => {
+export const ContentRouter = (props) => {
 
   const handleBreweryRoute = () => {
     const { location, populateBreweries, history, breweries } = props;
