@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, withRouter, NavLink } from 'react-router-dom';
 import  EventContainer  from '../../containers/EventContainer/EventContainer';
 import BreweryContainer  from '../../containers/BreweryContainer/BreweryContainer';
@@ -11,48 +11,52 @@ import { fetchEventDataByLocation } from '../../thunks/fetchEventDataByLocation'
 import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation';
 import './ContentRouter.css';
 
-export const ContentRouter = (props) => {
+export class ContentRouter extends Component {
 
-  const handleBreweryRoute = () => {
-    const { location, populateBreweries, history, breweries } = props;
+ handleBreweryRoute = () => {
+    const { location, populateBreweries, history, breweries } = this.props;
     if (!breweries.length) {
       populateBreweries(location.latitude, location.longitude);
     }
     history.push('/breweries');
   }
 
-  const handleEventRoute = () => {
-    const { location, populateEvents, history, events } = props;
+ handleEventRoute = () => {
+    const { location, populateEvents, history, events } = this.props;
     if (!events.length) {
       populateEvents(location.latitude, location.longitude);
     }
     history.push('/events');
   }
 
-  const handleGroupsRoute = () => {
-    const { location, populateGroups, history, groups } = props;
+ handleGroupsRoute = () => {
+    const { location, populateGroups, history, groups } = this.props;
     if (!groups.length) {
       populateGroups(location.latitude, location.longitude);
     }
     history.push('/groups')
   }
 
+  render() {
+    return(
+      <div>
+      <header>
+        <button className="event-button" onClick={() => this.handleEventRoute()}>events</button>
+        <button className="brewery-button" onClick={() => this.handleBreweryRoute()}>breweries</button>
+        <button className="group-button" onClick={() => this.handleGroupsRoute()}>groups</button>
+      </header>
+        <Route exact path= '/events' component={EventContainer} />
+        <Route exact path= '/breweries' component={BreweryContainer} />
+        <Route exact path= '/groups' component={GroupsContainer} />
+        <Route exact path={`/events/${this.props.eventProps.id}`} render={() => <EventInfo {...this.props} />}/>
+        <Route exact path={`/groups/${this.props.groupProps.id}`} render={() => <GroupInfo {...this.props} />}/>
+      </div>
+    )
+  }
 
-  return(
-    <div>
-    <header>
-      <button onClick={() => handleEventRoute()}>events</button>
-      <button onClick={() => handleBreweryRoute()}>breweries</button>
-      <button onClick={() => handleGroupsRoute()}>groups</button>
-    </header>
-      <Route exact path= '/events' component={EventContainer} />
-      <Route exact path= '/breweries' component={BreweryContainer} />
-      <Route exact path= '/groups' component={GroupsContainer} />
-      <Route exact path={`/events/${props.eventProps.id}`} render={() => <EventInfo {...props} />}/>
-      <Route exact path={`/groups/${props.groupProps.id}`} render={() => <GroupInfo {...props} />}/>
-    </div>
-  )
 }
+
+
 
 export const mapStateToProps = state => ({
   eventProps: state.eventToView,
