@@ -41,3 +41,8 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EventCard));
+
+EventCard.propTypes = {
+  events: PropTypes.array,
+  sendPropsFromCard: PropTypes.func
+};
