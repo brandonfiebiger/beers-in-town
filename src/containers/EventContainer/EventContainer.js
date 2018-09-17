@@ -31,3 +31,7 @@ export const mapStateToProps = state => ({
 
 
 export default connect(mapStateToProps, null)(EventContainer);
+
+EventContainer.propTypes = {
+  events: PropTypes.array
+};
