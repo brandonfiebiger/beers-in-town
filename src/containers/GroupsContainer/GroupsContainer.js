@@ -30,3 +30,8 @@ export const mapStateToProps = state => ({
 
 
 export default connect(mapStateToProps, null)(GroupContainer);
+
+
+GroupContainer.PropTypes = {
+  groups: PropTypes.array
+}
