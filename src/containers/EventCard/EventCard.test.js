@@ -8,9 +8,10 @@ describe('EventCard', () => {
 
   let wrapper;
   let mockDispatch
-  
+  let mockFn;
   beforeEach(() => {
-    wrapper = shallow(<EventCard sendPropsFromCard={jest.fn()}/>)
+    mockFn = jest.fn()
+    wrapper = shallow(<EventCard sendPropsFromCard={mockFn}/>)
     mockDispatch = jest.fn()
   })
 
@@ -19,17 +20,17 @@ describe('EventCard', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  // describe('handleClick', () => {
 
-  //   it('should call sendPropsFromCard with the correct parameters', () => {
 
-  //     const mappedProps = mapDispatchToProps(mockDispatch)
+    it('should call sendPropsFromCard with the correct parameters', () => {
 
-  //     wrapper.instance().handleClick()
+      const mappedProps = mapDispatchToProps(mockDispatch)
 
-  //     expect(wrapper.props().sendPropsFromCard).toHaveBeenCalled();
-  //   })
-  // })
+      wrapper.instance().handleClick()
+
+      expect(mockFn).toHaveBeenCalled();
+    })
+ 
 
 
   describe('mapStateToProps', () => {

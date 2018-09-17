@@ -10,7 +10,7 @@ export const fetchEventDataByLocation = (latitude, longitude) => {
       const cleanEvents = await eventCleaner(events.events);
       dispatch(populateEventsFromLocation(cleanEvents))
     } catch (error) {
-       throw new Error(error.message)
+       alert('Could not get your location')
     }
   }
 }

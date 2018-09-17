@@ -1,0 +1,1 @@
+export const fetchBreweryDataByLocation = jest.fn()

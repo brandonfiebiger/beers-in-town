@@ -5,7 +5,7 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 import GroupCard from '../GroupCard/GroupCard'
 
 export class GroupContainer extends Component {
-  constructor({props}) {
+  constructor(props) {
     super(props);
 
   }

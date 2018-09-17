@@ -1,0 +1,1 @@
+export const fetchGroupDataByLocation = jest.fn()

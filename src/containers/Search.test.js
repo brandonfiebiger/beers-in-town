@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Search, mapDispatchToProps } from './Search';
+import { mapDispatchToProps } from './Search';
+import  { Search } from './Search';
 import { shallow, mount } from 'enzyme';
+import createRouterContext from 'react-router-test-context';
+import { fetchBreweryDataBySearch } from '../thunks/fetchBreweryDataBySearch';
 import { fetchEventDataBySearch } from '../thunks/fetchEventDataBySearch';
-jest.mock('../thunks/fetchBreweryDataBySearch')
+import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
+jest.mock('../thunks/fetchEventDataBySearch');
+jest.mock('../thunks/fetchBreweryDataBySearch');
+jest.mock('../thunks/fetchGroupDataBySearch');
 
 
 describe('Search', () => {
@@ -27,15 +33,30 @@ describe('Search', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  // it('should call getEvents, getBreweries and getGroups when handleSubmit is invoked', () => {
-  //   wrapper = shallow(<Search getEvents={ jest.fn() } getGroups={ jest.fn() } getBreweries={ jest.fn() } history={ mockHistory }/>)
+  it('should call getEvents, getBreweries and getGroups when handleSubmit is invoked', () => {
+    let mockDispatch = jest.fn()
+    const context = createRouterContext();
+    wrapper = mount(<Search getEvents={ jest.fn() } getGroups={ jest.fn() } getBreweries={ jest.fn() } history={ mockHistory }/>, { context })
 
-  //   wrapper.state().city = 'Arlen';
-  //   wrapper.state().state = 'Texas';
-  //   wrapper.instance().handleSubmit(event)
-  //   console.log(wrapper.instance().getBreweries)
-  //   expect().toHaveBeenCalledWith()
-  // })
+    wrapper.state().city = 'Arlen';
+    wrapper.state().state = 'Texas';
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    wrapper.instance().handleSubmit(event)
+    expect(wrapper.props().getEvents).toHaveBeenCalledWith('Arlen', 'Texas');
+    expect(wrapper.props().getBreweries).toHaveBeenCalledWith('Arlen', 'Texas');
+    expect(wrapper.props().getGroups).toHaveBeenCalledWith('Arlen', 'Texas');
+  })
+
+  it('should update state when handleChange is called', () => {
+    let mockEvent = {preventDefault: jest.fn(),
+    target: {
+      value: 'hello',
+      name: 'city',
+    },
+  };
+    wrapper.instance().handleChange(mockEvent)
+    expect(wrapper.state('city')).toEqual('hello')
+  })
 
   describe('mapDispatchToProps', () => {
     it('calls dispatch with a fetchBreweryDataBySearch action', () => {
@@ -45,12 +66,38 @@ describe('Search', () => {
       const actionToDispatch = fetchBreweryDataBySearch('Arlen', 'Texas')
       
       const mappedProps = mapDispatchToProps(mockDispatch);
-      console.log(mappedProps)
 
-      mappedProps.getEvents('Arlen', 'Texas');
+      mappedProps.getBreweries('Arlen', 'Texas');
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
 
     })
+
+    it('calls dispatch with a fetchEventDataBySearch action', () => {
+      const mockDispatch = jest.fn();
+
+      const mockLocation = { city: 'Arlen', state: 'Texas' };
+      const actionToDispatch = fetchEventDataBySearch('Arlen', 'Texas')
+      
+      const mappedProps = mapDispatchToProps(mockDispatch);
+
+      mappedProps.getEvents('Arlen', 'Texas');
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+
+    it('calls dispatch with a fetchGroupDataBySearch action', () => {
+      const mockDispatch = jest.fn();
+
+      const mockLocation = { city: 'Arlen', state: 'Texas' };
+      const actionToDispatch = fetchGroupDataBySearch('Arlen', 'Texas')
+      
+      const mappedProps = mapDispatchToProps(mockDispatch);
+
+      mappedProps.getGroups('Arlen', 'Texas');
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+      expect(fetchGroupDataBySearch).toHaveBeenCalledWith('Arlen', 'Texas')
+    })    
   })
 })
