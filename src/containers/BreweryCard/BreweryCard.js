@@ -24,3 +24,13 @@ export class BreweryCard extends Component {
 }
 
 export default withRouter(connect(null, null)(BreweryCard));
+
+BreweryCard.propTypes = {
+  address_1: PropTypes.string,
+  rating: PropTypes.number,
+  city: PropTypes.string,
+  id: PropTypes.number,
+  state: PropTypes.string,
+  name: PropTypes.string,
+  phone: PropTypes.string
+};
