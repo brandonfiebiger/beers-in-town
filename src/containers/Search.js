@@ -4,6 +4,8 @@ import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
 import { fetchBreweryDataBySearch } from '../thunks/fetchBreweryDataBySearch';
 import { Route, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 
 export class Search extends Component {
   constructor(props) {
@@ -49,3 +51,9 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(Search));
+
+Search.propTypes = {
+  getEvents: PropTypes.func,
+  getGroups: PropTypes.func,
+  getBreweries: PropTypes.func
+};
