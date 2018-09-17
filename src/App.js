@@ -16,7 +16,7 @@ export class App extends Component {
   
   componentDidMount() {
     const { getGroups, getUserLocation } = this.props
-    navigator.geolocation.getCurrentPosition( async (location) => {
+    navigator.geolocation.getCurrentPosition((location) => {
       getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
     });
   }
