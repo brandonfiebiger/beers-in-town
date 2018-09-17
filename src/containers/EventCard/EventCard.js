@@ -24,7 +24,7 @@ export class EventCard extends Component {
      <h2>{name}</h2>
      <p>{date}</p>
      <p>{time}</p>
-     <h3>{groupName}</h3>
+     <h3>By: {groupName}</h3>
      {ven ? <h4>{ven.name}</h4>: ''}
      <NavLink onClick={this.handleClick} to={`/events/${id}`} className='nav'>event info</NavLink>
     </section>
@@ -41,3 +41,8 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EventCard));
+
+EventCard.propTypes = {
+  events: PropTypes.array,
+  sendPropsFromCard: PropTypes.func
+};

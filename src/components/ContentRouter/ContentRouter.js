@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { fetchBreweryDataByLocation } from '../../thunks/fetchBreweryDataByLocation';
 import { fetchEventDataByLocation } from '../../thunks/fetchEventDataByLocation';
 import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation';
-
+import './ContentRouter.css';
 
 export const ContentRouter = (props) => {
 

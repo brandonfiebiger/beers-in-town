@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import PropTypes from 'prop-types';
 
 
 export const GroupInfo = (props) => {
@@ -17,3 +18,7 @@ export const GroupInfo = (props) => {
 }
 
 export default GroupInfo;
+
+GroupInfo.propTypes = {
+  groupProps: PropTypes.object
+};

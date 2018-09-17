@@ -23,7 +23,9 @@ ShallowWrapper {
         <h2 />,
         <p />,
         <p />,
-        <h3 />,
+        <h3>
+          By: 
+</h3>,
         "",
         <NavLink
           activeClassName="active"
@@ -77,10 +79,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            "By: ",
+            undefined,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          "By: ",
+          undefined,
+        ],
         "type": "h3",
       },
       "",
@@ -113,7 +121,9 @@ ShallowWrapper {
           <h2 />,
           <p />,
           <p />,
-          <h3 />,
+          <h3>
+            By: 
+</h3>,
           "",
           <NavLink
             activeClassName="active"
@@ -167,10 +177,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              "By: ",
+              undefined,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            "By: ",
+            undefined,
+          ],
           "type": "h3",
         },
         "",

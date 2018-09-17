@@ -1,7 +1,20 @@
 .EventCard {
   border: 2px solid;
-  background: #ABD2FA;
   border-radius: 20px; 
   width: 45rem;
   margin-bottom: 2rem;
+  height: 17rem;
+  color: #574f4f;
+  text-shadow: 1px 1px #574f4f;
+  box-shadow: 0 0 40px #000000;
+  background-image: linear-gradient(to right top, #a5d9bc, #aedab7, #b8dbb2, #c2dcae, #cddcab);
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+.nav {
+  color: #574f4f;
+  cursor: pointer;
 }

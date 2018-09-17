@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Search, mapDispatchToProps } from './Search';
 import { shallow, mount } from 'enzyme';
 import { fetchEventDataBySearch } from '../thunks/fetchEventDataBySearch';
+jest.mock('../thunks/fetchBreweryDataBySearch')
 
 
 describe('Search', () => {
@@ -37,11 +38,11 @@ describe('Search', () => {
   // })
 
   describe('mapDispatchToProps', () => {
-    it('calls dispatch with a fetchEventDataBySearch action', () => {
+    it('calls dispatch with a fetchBreweryDataBySearch action', () => {
       const mockDispatch = jest.fn();
 
       const mockLocation = { city: 'Arlen', state: 'Texas' };
-      const actionToDispatch = fetchEventDataBySearch('Arlen', 'Texas')
+      const actionToDispatch = fetchBreweryDataBySearch('Arlen', 'Texas')
       
       const mappedProps = mapDispatchToProps(mockDispatch);
       console.log(mappedProps)

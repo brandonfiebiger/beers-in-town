@@ -40,3 +40,13 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GroupCard));
+
+
+GroupCard.propTypes = {
+  events: PropTypes.array,
+  sendPropsFromCard: PropTypes.func,
+  name: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  id: PropTypes.number
+};

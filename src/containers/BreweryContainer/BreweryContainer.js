@@ -33,4 +33,8 @@ export const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, null)(BreweryContainer);
 
+BreweryContainer.propTypes = {
+  breweries: PropTypes.array
+};
+
 

@@ -1,9 +1,11 @@
 .App {
   text-align: center;
-  background: #3D518C;
+  background:  #bdcebe;
   height: 100vh;
   margin: 0;
   overflow: scroll;
+  background-image: url("https://ak9.picdn.net/shutterstock/videos/7848469/thumb/2.jpg");
+  background-size: cover;
 }
 
 h1 {
