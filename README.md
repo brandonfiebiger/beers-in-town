@@ -3,4 +3,4 @@
 #Beers in Town is an application that utilizes the Meetup API and geo-location to fetch all of the craft beer related events, groups and breweries near your location. You can also search a location in the search fields. No longer will you struggle with finding beer related fun near you!
 
 
-![alt text](file:///Users/brandonfiebiger/Desktop/beers%20in%20town%20img/Screen%20Shot%202018-09-18%20at%201.11.44%20PM.png)
+<img width="530" alt="screen shot 2018-09-18 at 1 11 44 pm" src="https://user-images.githubusercontent.com/29244492/45711235-2523ad00-bb46-11e8-8d82-edf3a7ce4a8d.png">
