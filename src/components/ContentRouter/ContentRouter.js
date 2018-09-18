@@ -12,6 +12,13 @@ import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation'
 import './ContentRouter.css';
 
 export class ContentRouter extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      selected: ''
+    }
+  }
 
  handleBreweryRoute = () => {
     const { location, populateBreweries, history, breweries } = this.props;
@@ -19,6 +26,9 @@ export class ContentRouter extends Component {
       populateBreweries(location.latitude, location.longitude);
     }
     history.push('/breweries');
+    this.setState({
+      selected: 'breweries'
+    })
   }
 
  handleEventRoute = () => {
@@ -27,6 +37,9 @@ export class ContentRouter extends Component {
       populateEvents(location.latitude, location.longitude);
     }
     history.push('/events');
+    this.setState({
+      selected: 'events'
+    })
   }
 
  handleGroupsRoute = () => {
@@ -35,15 +48,18 @@ export class ContentRouter extends Component {
       populateGroups(location.latitude, location.longitude);
     }
     history.push('/groups')
+    this.setState({
+      selected: 'groups'
+    })
   }
 
   render() {
     return(
       <div>
       <header>
-        <button className="event-button" onClick={() => this.handleEventRoute()}>events</button>
-        <button className="brewery-button" onClick={() => this.handleBreweryRoute()}>breweries</button>
-        <button className="group-button" onClick={() => this.handleGroupsRoute()}>groups</button>
+        <button className={this.state.selected === 'events' ? "event-button selected" : "event-button"} onClick={() => this.handleEventRoute()}>events</button>
+        <button className={this.state.selected === 'breweries' ? "brewery-button selected" : "brewery-button"} onClick={() => this.handleBreweryRoute()}>breweries</button>
+        <button className={this.state.selected === 'groups' ? "group-button selected" : "group-button"} onClick={() => this.handleGroupsRoute()}>groups</button>
       </header>
         <Route exact path= '/events' component={EventContainer} />
         <Route exact path= '/breweries' component={BreweryContainer} />
