@@ -17,6 +17,10 @@ header button:hover {
   background: cadetblue;
 }
 
+.selected:hover {
+  background: #d3e4ff;
+}
+
 header {
   display: flex;
   margin: 0 auto;
