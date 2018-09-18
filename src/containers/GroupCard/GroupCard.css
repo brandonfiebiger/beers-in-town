@@ -1,0 +1,12 @@
+.GroupCard {
+  border: 2px solid;
+  border-radius: 20px; 
+  width: 60vw;
+  margin-bottom: 2rem;
+  height: 10rem;
+  color: #f9f9f9;
+  text-shadow: 1px 1px #574f4f;
+  box-shadow: 0 0 90px #000000;
+  background: rgba(25, 25, 25, .5);
+  padding: 2rem;
+}
