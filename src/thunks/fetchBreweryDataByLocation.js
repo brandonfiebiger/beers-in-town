@@ -8,7 +8,7 @@ export const fetchBreweryDataByLocation = (latitude, longitude) => {
       const breweries = await response.json();
       dispatch(populateBreweriesFromLocation(breweries))
     } catch (error) {
-       throw new Error('failed to fetch')
+       alert('could not get your location')
     }
   }
 }
