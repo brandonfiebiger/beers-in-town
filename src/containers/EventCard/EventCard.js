@@ -22,10 +22,10 @@ export class EventCard extends Component {
     return(
     <section className='EventCard'>
      <h2>{name}</h2>
-     <p>{date}</p>
-     <p>{time}</p>
+     <p>When: {date}</p>
+     <p>time: {time}</p>
      <h3>By: {groupName}</h3>
-     {ven ? <h4>{ven.name}</h4>: ''}
+     {ven ? <h4>Venue: {ven.name}</h4>: ''}
      <NavLink onClick={this.handleClick} to={`/events/${id}`} className='nav'>event info</NavLink>
     </section>
     )
