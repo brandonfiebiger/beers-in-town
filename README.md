@@ -4,3 +4,6 @@
 
 
 <img width="530" alt="screen shot 2018-09-18 at 1 11 44 pm" src="https://user-images.githubusercontent.com/29244492/45711235-2523ad00-bb46-11e8-8d82-edf3a7ce4a8d.png">
+
+
+<img width="1436" alt="screen shot 2018-09-18 at 1 10 30 pm" src="https://user-images.githubusercontent.com/29244492/45711268-44bad580-bb46-11e8-8afa-edf9b2c19a05.png">
