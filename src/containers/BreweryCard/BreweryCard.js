@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import './BreweryCard.css';
 
 export class BreweryCard extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class BreweryCard extends Component {
   render() {
     const { address_1, rating, city, id, state, name, phone } = this.props
     return(
-      <section>
+      <section className="BreweryCard">
         <h1>{ name }</h1>
         <h4>{ city }, { state }</h4>
         <h5>{ address_1 }</h5>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import GroupCard from '../GroupCard/GroupCard'
+import './GroupsContainer.css';
 
 export class GroupContainer extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export class GroupContainer extends Component {
 
   render() {
     return(
-      <section>
+      <section className="GroupsContainer">
       {this.displayGroups()}
       </section>
     )

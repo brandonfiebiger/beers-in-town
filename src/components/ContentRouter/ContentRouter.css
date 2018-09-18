@@ -6,6 +6,19 @@ header button {
   font-size: 1.3rem;
   background-image: linear-gradient(to right top, #a5d9bc, #aedab7, #b8dbb2, #c2dcae, #cddcab);
   box-shadow: 0 0 10px #000000;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-image: linear-gradient(to right top, #b6f0cd, #bfebc8, #c9ecc3, #d3edbf, #deedbc);  
+}
+
+.selected {
+  background: cadetblue;
+}
+
+.selected:hover {
+  background: #d3e4ff;
 }
 
 header {

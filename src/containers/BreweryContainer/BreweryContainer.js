@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { BreweryCard } from '../BreweryCard/BreweryCard'
+import { BreweryCard } from '../BreweryCard/BreweryCard';
+import './BreweryContainer.css'
 
 
 export class BreweryContainer extends Component {
@@ -18,7 +19,7 @@ export class BreweryContainer extends Component {
   
   render() {
     return(
-      <section>
+      <section className="BreweryContainer">
         {this.displayBreweries()}
       </section>
     )

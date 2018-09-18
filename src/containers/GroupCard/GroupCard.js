@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, withRouter, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getPropsFromGroup } from '../../actions/index';
-
+import './GroupCard.css'
 
 
 export class GroupCard extends Component {
@@ -20,7 +20,7 @@ export class GroupCard extends Component {
 
   render() {
     return(
-      <article>
+      <article className="GroupCard">
         <h2>{ this.props.name }</h2>
         <h3>{ this.props.city }, {this.props.state}</h3>
         <NavLink onClick={this.handleClick} to={`/groups/${this.props.id}`} className='nav'>group info</NavLink>

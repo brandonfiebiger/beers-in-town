@@ -11,7 +11,7 @@ export const fetchGroupDataByLocation = (latitude, longitude) => {
       const cleanedGroups = await cleanGroupData(groups);
       dispatch(populateGroupsFromLocation(cleanedGroups))
     } catch (error) {
-      throw new Error(error.message)
+      alert('could not get your location')
     }
   }
 }

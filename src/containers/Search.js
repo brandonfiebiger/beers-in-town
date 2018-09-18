@@ -36,8 +36,8 @@ export class Search extends Component {
   render() {
     return(
       <form onSubmit={ this.handleSubmit } >
-        <input name='city' value={this.state.city} onChange={this.handleChange}/>
-        <input name='state' value={this.state.state} onChange={this.handleChange}/>
+        <input name='city' value={this.state.city} onChange={this.handleChange} placeholder="city Ex. Madison"/>
+        <input name='state' value={this.state.state} onChange={this.handleChange} placeholder="state Ex. WI"/>
         <button>Search</button>
       </form>
     )
