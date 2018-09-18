@@ -9,7 +9,7 @@ export const fetchBreweryDataBySearch = (city, state) => {
       dispatch(populateBreweriesFromSearch(breweries.results))
     } catch (error) {
       //  throw new Error(error.message)
-      alert('you fucked up')
+      alert('not a valid location')
     }
   }
 }

@@ -12,7 +12,7 @@ export const fetchGroupDataBySearch = (city, state) => {
       dispatch(populateGroupsFromSearch(cleanedGroups))
     } catch (error) {
       // throw new Error(error.message)
-      alert('you fucked up')
+      alert('not a valid location')
     }
   }
 }
