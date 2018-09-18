@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import PropTypes from 'prop-types';
+import './GroupInfo.css'
 
 
 export const GroupInfo = (props) => {
   return(
-    <section>
+    <section className="group-info">
       <h2>{props.groupProps.name}</h2>
       <h3>{props.groupProps.city}, {props.groupProps.state}</h3>
       {!props.groupProps.group_photo ? '' : <img src={props.groupProps.group_photo.photo_link}  /> }
