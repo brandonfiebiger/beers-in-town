@@ -8,12 +8,12 @@ export const EventInfo = (props) => {
 
   return(
     <div className="event-info">
-      <h1>{props.eventProps.name}</h1>
-      <h2>By: {props.eventProps.groupName}</h2>
-      { props.eventProps.ven ? <h3>At: {props.eventProps.ven.name}</h3> : '' }
-      <p>{props.eventProps.date}</p>
-      <p>{props.eventProps.time}</p>
-      <section>{ReactHtmlParser(props.eventProps.desc)}</section>
+      <h1>{ props.eventProps.name }</h1>
+      <h2>By: { props.eventProps.groupName }</h2>
+      { props.eventProps.ven ? <h3>At: { props.eventProps.ven.name }</h3> : '' }
+      <p>{ props.eventProps.date }</p>
+      <p>{ props.eventProps.time }</p>
+      <section>{ ReactHtmlParser(props.eventProps.desc) }</section>
     </div>
   )
 }

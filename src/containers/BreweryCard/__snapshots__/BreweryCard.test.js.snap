@@ -30,6 +30,7 @@ ShallowWrapper {
            out of 5
 </h3>,
       ],
+      "className": "BreweryCard",
     },
     "ref": null,
     "rendered": Array [
@@ -126,6 +127,7 @@ ShallowWrapper {
              out of 5
 </h3>,
         ],
+        "className": "BreweryCard",
       },
       "ref": null,
       "rendered": Array [

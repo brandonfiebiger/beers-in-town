@@ -52,6 +52,7 @@ ShallowWrapper {
           Really good
 </section>,
       ],
+      "className": "event-info",
     },
     "ref": null,
     "rendered": Array [
@@ -168,6 +169,7 @@ ShallowWrapper {
             Really good
 </section>,
         ],
+        "className": "event-info",
       },
       "ref": null,
       "rendered": Array [
@@ -325,6 +327,7 @@ ShallowWrapper {
           Really good
 </section>,
       ],
+      "className": "event-info",
     },
     "ref": null,
     "rendered": Array [
@@ -422,6 +425,7 @@ ShallowWrapper {
             Really good
 </section>,
         ],
+        "className": "event-info",
       },
       "ref": null,
       "rendered": Array [

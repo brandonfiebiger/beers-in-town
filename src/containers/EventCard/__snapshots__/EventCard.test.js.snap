@@ -21,8 +21,12 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h2 />,
-        <p />,
-        <p />,
+        <p>
+          When: 
+</p>,
+        <p>
+          time: 
+</p>,
         <h3>
           By: 
 </h3>,
@@ -57,10 +61,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            "When: ",
+            undefined,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          "When: ",
+          undefined,
+        ],
         "type": "p",
       },
       Object {
@@ -68,10 +78,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            "time: ",
+            undefined,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          "time: ",
+          undefined,
+        ],
         "type": "p",
       },
       Object {
@@ -119,8 +135,12 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h2 />,
-          <p />,
-          <p />,
+          <p>
+            When: 
+</p>,
+          <p>
+            time: 
+</p>,
           <h3>
             By: 
 </h3>,
@@ -155,10 +175,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              "When: ",
+              undefined,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            "When: ",
+            undefined,
+          ],
           "type": "p",
         },
         Object {
@@ -166,10 +192,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              "time: ",
+              undefined,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            "time: ",
+            undefined,
+          ],
           "type": "p",
         },
         Object {
