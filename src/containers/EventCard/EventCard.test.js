@@ -37,7 +37,8 @@ describe('EventCard', () => {
 
     it('should return an object with the events array', () => {
       const mockState = {
-        events: ['some event', 'another event']
+        events: ['some event', 'another event'],
+        groups: ['some group', 'another group']
       }
 
       const expected = {

@@ -11,7 +11,7 @@ export const fetchEventDataBySearch = (city, state) => {
       dispatch(populateEventsFromSearch(cleanEvents))
     } catch (error) {
       //  throw new Error(error.message)
-      alert('you fucked up')
+      alert('not a valid location')
     }
   }
 }

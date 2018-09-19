@@ -17,10 +17,6 @@ export const eventCleaner = (events) => {
   })
 }
 
-export const cleanBreweryData = async (latitude, longitude) => {
-  const fetchedBreweries = await fetchBreweryDataByLocation(latitude, longitude)
-}
-
 export const cleanGroupData = (unCleanEvents) => {
   return unCleanEvents.map(event => {
     return {
