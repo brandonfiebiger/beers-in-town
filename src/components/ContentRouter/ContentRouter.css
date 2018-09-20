@@ -50,14 +50,15 @@ input {
 @media screen and (max-width: 560px) {
   header {
     flex-direction: row;
-    width: 99vw;
+    width: 60vw;
     text-align: center;
     align-items: center;
   }
 
   header button {
     margin-right: 0;
-    width: 7rem;
+    width: 5rem;
+    font-size: .9rem;
   }
 
   .location-inputs {
@@ -66,5 +67,17 @@ input {
 
   .search-button {
     width: 18rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    width: 95vw;
   }
 }
