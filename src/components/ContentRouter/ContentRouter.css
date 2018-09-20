@@ -37,3 +37,18 @@ input {
 .routes-container {
   overflow: scroll;
 }
+
+@media screen and (max-width: 560px) {
+  header {
+    flex-direction: row;
+    width: 100vw;
+    text-align: center;
+    align-items: center;
+  }
+
+  header button {
+    /* margin: auto 0; */
+    margin-right: 0;
+
+  }
+}
