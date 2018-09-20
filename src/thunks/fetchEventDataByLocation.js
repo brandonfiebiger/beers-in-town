@@ -1,4 +1,4 @@
-import { populateEventsFromLocation } from '../actions/';
+import { populateEventsFromLocation, hasErrored } from '../actions/';
 import { apikey } from '../utils/variables';
 import { eventCleaner } from '../utils/helper';
 
@@ -10,7 +10,7 @@ export const fetchEventDataByLocation = (latitude, longitude) => {
       const cleanEvents = await eventCleaner(events.events);
       dispatch(populateEventsFromLocation(cleanEvents))
     } catch (error) {
-       alert('Could not get your location')
+       dispatch(hasErrored(true))
     }
   }
 }

@@ -1,5 +1,5 @@
 import { apikey } from '../utils/variables';
-import  { populateGroupsFromLocation } from '../actions/';
+import  { populateGroupsFromLocation, hasErrored } from '../actions/';
 import { cleanGroupData } from '../utils/helper';
 
 
@@ -11,7 +11,7 @@ export const fetchGroupDataByLocation = (latitude, longitude) => {
       const cleanedGroups = await cleanGroupData(groups);
       dispatch(populateGroupsFromLocation(cleanedGroups))
     } catch (error) {
-      alert('could not get your location')
+      dispatch(hasErrored(true));
     }
   }
 }
