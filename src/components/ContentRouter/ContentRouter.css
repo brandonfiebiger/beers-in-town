@@ -21,6 +21,15 @@ header button:hover {
   background: rgba(39, 14, 14, 0.9);
 }
 
+.error-message {
+  background: rgba(39, 14, 14, 0.9);
+  color: #f9f9f9;
+  height: 2rem;
+  font-size: 1rem;
+  padding-top: .7rem;
+  width: 99vw;
+  margin: 1rem auto;
+}
 
 header {
   display: flex;
@@ -41,7 +50,7 @@ input {
 @media screen and (max-width: 560px) {
   header {
     flex-direction: row;
-    width: 100vw;
+    width: 99vw;
     text-align: center;
     align-items: center;
   }
