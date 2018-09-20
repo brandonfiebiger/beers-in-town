@@ -3,6 +3,7 @@ import { fetchEventDataByLocation } from '../thunks/fetchEventDataByLocation';
 import { fetchLocationBySearch } from '../thunks/fetchLocationBySearch';
 import { fetchBreweryDataByLocation } from '../thunks/fetchBreweryDataByLocation';
 import { Route, withRouter, NavLink } from 'react-router-dom';
+import { hasErrored } from '../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchGroupDataByLocation } from '../thunks/fetchGroupDataByLocation';
@@ -50,6 +51,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   getLocation: (city, state) => dispatch(fetchLocationBySearch(city, state)),
+  hasErrored: error => dispatch(hasErrored(error))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
