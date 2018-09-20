@@ -6,7 +6,7 @@ import { Route, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchGroupDataByLocation } from '../thunks/fetchGroupDataByLocation';
-
+import './Search.css'
 
 export class Search extends Component {
   constructor(props) {
@@ -39,9 +39,9 @@ export class Search extends Component {
   render() {
     return(
       <form onSubmit={ this.handleSubmit } >
-        <input name='city' value={this.state.city} onChange={this.handleChange} placeholder="city Ex. Madison"/>
-        <input name='state' value={this.state.state} onChange={this.handleChange} placeholder="state Ex. WI"/>
-        <button>Search</button>
+        <input className="location-inputs" name='city' value={this.state.city} onChange={this.handleChange} placeholder="city Ex. Madison"/>
+        <input className="location-inputs" name='state' value={this.state.state} onChange={this.handleChange} placeholder="state Ex. WI"/>
+        <button className="search-button">Search</button>
       </form>
     )
   }
