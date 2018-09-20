@@ -41,6 +41,7 @@ header {
 input {
   height: 1.4rem;
   margin-right: .2rem;
+  padding-left: .7rem;
 }
 
 .routes-container {
@@ -62,7 +63,7 @@ input {
   }
 
   .location-inputs {
-    width: 18rem;
+    width: 17rem;
   }
 
   .search-button {
