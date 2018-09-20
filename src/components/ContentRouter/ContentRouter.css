@@ -47,8 +47,15 @@ input {
   }
 
   header button {
-    /* margin: auto 0; */
     margin-right: 0;
+    width: 7rem;
+  }
 
+  .location-inputs {
+    width: 18rem;
+  }
+
+  .search-button {
+    width: 18rem;
   }
 }
