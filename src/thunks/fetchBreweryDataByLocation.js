@@ -1,5 +1,5 @@
 import { apikey } from '../utils/variables'
-import { populateBreweriesFromLocation } from '../actions/';
+import { populateBreweriesFromLocation, hasErrored } from '../actions/';
 
 export const fetchBreweryDataByLocation = (latitude, longitude) => {
   return async (dispatch) => {
@@ -9,7 +9,7 @@ export const fetchBreweryDataByLocation = (latitude, longitude) => {
       const breweries = await response.json();
       dispatch(populateBreweriesFromLocation(breweries))
     } catch (error) {
-       alert('could not get your location')
+       dispatch(hasErrored(true))
     }
   }
 }
