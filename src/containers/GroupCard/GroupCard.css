@@ -1,7 +1,7 @@
 .GroupCard {
   border: 2px solid;
   border-radius: 20px; 
-  width: 60vw;
+  width: 45vw;
   margin-bottom: 2rem;
   height: 10rem;
   color: #f9f9f9;
@@ -13,4 +13,11 @@
 
 .GroupCard:hover {
   background: rgba(25, 25, 25, .8);
+}
+
+@media screen and (max-width: 900px) {
+
+  .GroupCard {
+    width: 70vw;
+  }
 }

@@ -1,7 +1,7 @@
 .EventCard {
   border: 2px solid;
   border-radius: 20px; 
-  width: 70vw;
+  width: 40vw;
   margin-bottom: 2rem;
   height: auto;
   color: #f9f9f9;
@@ -9,6 +9,7 @@
   box-shadow: 0 0 90px #000000;
   background: rgba(25, 25, 25, .7);
   padding: 2rem;
+  cursor: pointer;
 }
 
 .EventCard:hover {
@@ -18,4 +19,11 @@
 .nav {
   color: #f9f9f9;
   cursor: pointer;
+}
+
+@media screen and (max-width: 860px) {
+
+  .EventCard {
+    width: 70vw;
+  }
 }
