@@ -10,3 +10,7 @@
   background: rgba(25, 25, 25, .5);
   padding: 2rem;
 }
+
+.GroupCard:hover {
+  background: rgba(25, 25, 25, .8);
+}
