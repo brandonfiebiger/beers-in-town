@@ -1,24 +1,27 @@
 header button {
-  height: 2rem;
-  width: 7rem;
+  height: 2.5rem;
+  width: 7.5rem;
   margin-top: 1rem;
+  margin-right: .2rem;
+  border-radius: 10px;
   text-decoration: underline;
   font-size: 1.3rem;
-  background-image: linear-gradient(to right top, #a5d9bc, #aedab7, #b8dbb2, #c2dcae, #cddcab);
+  background: rgba(25, 25, 25, .7);
   box-shadow: 0 0 10px #000000;
   cursor: pointer;
+  color: #f9f9f9
 }
 
 header button:hover {
-  background-image: linear-gradient(to right top, #b6f0cd, #bfebc8, #c9ecc3, #d3edbf, #deedbc);  
+  background: rgba(50, 34, 34, 0.7);
 }
 
 .selected {
-  background: cadetblue;
+  background: rgba(39, 14, 14, 0.9);
 }
 
 .selected:hover {
-  background: #d3e4ff;
+  background: rgba(25, 25, 25, .7);
 }
 
 header {
