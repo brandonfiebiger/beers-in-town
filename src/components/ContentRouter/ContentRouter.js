@@ -61,7 +61,7 @@ export class ContentRouter extends Component {
         <button className={this.state.selected === 'breweries' ? "brewery-button selected" : "brewery-button"} onClick={() => this.handleBreweryRoute()}>breweries</button>
         <button className={this.state.selected === 'groups' ? "group-button selected" : "group-button"} onClick={() => this.handleGroupsRoute()}>groups</button>
       </header>
-      {this.props.hasErrored ? <p>Please enter a valid location</p> : ''}
+      {this.props.hasErrored ? <p className="error-message">Please enter a valid location</p> : ''}
       <section className="routes-container">
         <Route exact path= '/events' component={EventContainer} />
         <Route exact path= '/breweries' component={BreweryContainer} />
