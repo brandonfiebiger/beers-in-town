@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchEventDataByLocation } from '../thunks/fetchEventDataByLocation';
-import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
+import { fetchLocationBySearch } from '../thunks/fetchLocationBySearch';
 import { fetchBreweryDataByLocation } from '../thunks/fetchBreweryDataByLocation';
 import { Route, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -29,9 +29,6 @@ export class Search extends Component {
     const { latitude, longitude } = this.props.location
     const { city, state } = this.state
     this.props.getLocation(this.state.city, this.state.state);
-    this.props.getEvents(latitude, longitude);
-    this.props.getBreweries(latitude, longitude);
-    this.props.getGroups(latitude, longitude);
     this.props.history.push('/events');
   }
 
@@ -52,10 +49,7 @@ export const mapStateToProps = state => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  getLocation: (city, state) => dispatch(fetchGroupDataBySearch(city, state)),
-  getEvents: (latitude, longitude) => dispatch(fetchEventDataByLocation(latitude, longitude)),
-  getBreweries: (latitude, longitude) => dispatch(fetchBreweryDataByLocation(latitude, longitude)),
-  getGroups: (latitude, longitude) => dispatch(fetchGroupDataByLocation(latitude, longitude))
+  getLocation: (city, state) => dispatch(fetchLocationBySearch(city, state)),
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
