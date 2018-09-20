@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import  EventInfo  from '../EventInfo/EventInfo';
 import { getPropsFromEvent } from '../../actions/index';
-import './EventCard.css'
+import './EventCard.css';
+const convertTime = require('convert-time');
+
 
 export class EventCard extends Component {
   constructor(props) {
@@ -24,7 +26,7 @@ export class EventCard extends Component {
       <section className='EventCard'>
         <h2>{name}</h2>
         <p>When: {date}</p>
-        <p>time: {time}</p>
+        <p>time: {convertTime(time)}</p>
         <h3>By: {groupName}</h3>
         {ven ? <h4>Venue: {ven.name}</h4>: ''}
       </section>
