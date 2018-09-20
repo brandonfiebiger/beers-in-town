@@ -21,7 +21,7 @@ export class App extends Component {
 
     return (
       <div className="App">
-        <h1>BEERS IN TOWN</h1>
+        <h1 id="app-header">BEERS IN TOWN</h1>
         <Search />
         <section>
           <ContentRouter />

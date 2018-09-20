@@ -11,6 +11,10 @@
   padding: 2rem;
 }
 
+.EventCard:hover {
+  background: rgba(25, 25, 25, .8);
+}
+
 .nav {
   color: #f9f9f9;
   cursor: pointer;

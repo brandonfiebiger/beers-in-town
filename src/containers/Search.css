@@ -1,0 +1,28 @@
+.location-inputs {
+  height: 2.56rem;
+  width: 10rem;
+  margin-right: 1.2rem;
+  border-radius: 10px;
+  background: rgba(25, 25, 25, .5);
+  color: #f9f9f9;
+  font-size: 1.2rem;
+}
+
+.location-inputs::placeholder {
+  color: #f9f9f9;
+}
+
+.search-button {
+  height: 3rem;
+  width: 10rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background: rgba(25, 25, 25, .9);
+  cursor: pointer;
+  color: #f9f9f9;
+}
+
+.search-button:hover {
+  background: rgba(25, 25, 25, 1);
+
+}

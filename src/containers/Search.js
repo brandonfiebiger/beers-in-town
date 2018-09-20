@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { fetchEventDataBySearch } from '../thunks/fetchEventDataBySearch';
+import { fetchEventDataByLocation } from '../thunks/fetchEventDataByLocation';
 import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
-import { fetchBreweryDataBySearch } from '../thunks/fetchBreweryDataBySearch';
+import { fetchBreweryDataByLocation } from '../thunks/fetchBreweryDataByLocation';
 import { Route, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
+import { fetchGroupDataByLocation } from '../thunks/fetchGroupDataByLocation';
+import './Search.css'
 
 export class Search extends Component {
   constructor(props) {
@@ -25,32 +26,39 @@ export class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    const { latitude, longitude } = this.props.location
     const { city, state } = this.state
-    this.props.getEvents(this.state.city, this.state.state)
-    this.props.getGroups(this.state.city, this.state.state)
-    this.props.getBreweries(this.state.city, this.state.state)
-    this.props.history.push('/events')
+    this.props.getLocation(this.state.city, this.state.state);
+    this.props.getEvents(latitude, longitude);
+    this.props.getBreweries(latitude, longitude);
+    this.props.getGroups(latitude, longitude);
+    this.props.history.push('/events');
   }
 
 
   render() {
     return(
       <form onSubmit={ this.handleSubmit } >
-        <input name='city' value={this.state.city} onChange={this.handleChange} placeholder="city Ex. Madison"/>
-        <input name='state' value={this.state.state} onChange={this.handleChange} placeholder="state Ex. WI"/>
-        <button>Search</button>
+        <input className="location-inputs" name='city' value={this.state.city} onChange={this.handleChange} placeholder="city Ex. Madison"/>
+        <input className="location-inputs" name='state' value={this.state.state} onChange={this.handleChange} placeholder="state Ex. WI"/>
+        <button className="search-button">Search</button>
       </form>
     )
   }
 }
 
-export const mapDispatchToProps = dispatch => ({
-  getEvents: (city, state) => dispatch(fetchEventDataBySearch(city, state)),
-  getGroups: (city, state) => dispatch(fetchGroupDataBySearch(city, state)),
-  getBreweries: (city, state) => dispatch(fetchBreweryDataBySearch(city,state))
+export const mapStateToProps = state => ({
+  location: state.location
 })
 
-export default withRouter(connect(null, mapDispatchToProps)(Search));
+export const mapDispatchToProps = dispatch => ({
+  getLocation: (city, state) => dispatch(fetchGroupDataBySearch(city, state)),
+  getEvents: (latitude, longitude) => dispatch(fetchEventDataByLocation(latitude, longitude)),
+  getBreweries: (latitude, longitude) => dispatch(fetchBreweryDataByLocation(latitude, longitude)),
+  getGroups: (latitude, longitude) => dispatch(fetchGroupDataByLocation(latitude, longitude))
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
 
 Search.propTypes = {
   getEvents: PropTypes.func,

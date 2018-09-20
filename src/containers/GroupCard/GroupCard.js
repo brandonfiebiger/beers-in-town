@@ -20,12 +20,12 @@ export class GroupCard extends Component {
 
   render() {
     return(
-      <article className="GroupCard">
-        <h2>{ this.props.name }</h2>
-        <h3>{ this.props.city }, {this.props.state}</h3>
-        <NavLink onClick={this.handleClick} to={`/groups/${this.props.id}`} className='nav'>group info</NavLink>
-
-      </article>
+      <NavLink onClick={this.handleClick} to={`/groups/${this.props.id}`} className='nav'>
+        <article className="GroupCard">
+          <h2>{ this.props.name }</h2>
+          <h3>{ this.props.city }, {this.props.state}</h3>
+        </article>
+      </NavLink>
     )
   }
 }

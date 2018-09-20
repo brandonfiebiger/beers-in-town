@@ -20,14 +20,15 @@ export class EventCard extends Component {
   render() {
     const { date, desc, group, time, ven, groupName, name, id } = this.props
     return(
-    <section className='EventCard'>
-     <h2>{name}</h2>
-     <p>When: {date}</p>
-     <p>time: {time}</p>
-     <h3>By: {groupName}</h3>
-     {ven ? <h4>Venue: {ven.name}</h4>: ''}
-     <NavLink onClick={this.handleClick} to={`/events/${id}`} className='nav'>event info</NavLink>
-    </section>
+     <NavLink onClick={this.handleClick} to={`/events/${id}`} className='nav'>
+      <section className='EventCard'>
+        <h2>{name}</h2>
+        <p>When: {date}</p>
+        <p>time: {time}</p>
+        <h3>By: {groupName}</h3>
+        {ven ? <h4>Venue: {ven.name}</h4>: ''}
+      </section>
+    </NavLink>
     )
   }
 }
