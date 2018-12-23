@@ -36,18 +36,15 @@ describe('Search', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it('should call getEvents, getBreweries and getGroups when handleSubmit is invoked', () => {
+  it('should call getLocation and history.push when handleSubmit is invoked', () => {
     let mockDispatch = jest.fn()
     const context = createRouterContext();
-    wrapper = mount(<Search getEvents={ jest.fn() } getGroups={ jest.fn() } getBreweries={ jest.fn() } history={ mockHistory }/>, { context })
+    wrapper = mount(<Search getLocation={ jest.fn() } history={ mockHistory }/>, { context })
 
     wrapper.state().city = 'Arlen';
     wrapper.state().state = 'Texas';
-    const mappedProps = mapDispatchToProps(mockDispatch);
     wrapper.instance().handleSubmit(event)
-    expect(wrapper.props().getEvents).toHaveBeenCalledWith('Arlen', 'Texas');
-    expect(wrapper.props().getBreweries).toHaveBeenCalledWith('Arlen', 'Texas');
-    expect(wrapper.props().getGroups).toHaveBeenCalledWith('Arlen', 'Texas');
+    expect(wrapper.props().getLocation).toHaveBeenCalledWith('Arlen', 'Texas');
   })
 
   it('should update state when handleChange is called', () => {
