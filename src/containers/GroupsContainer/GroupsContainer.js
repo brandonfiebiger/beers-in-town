@@ -12,7 +12,7 @@ export class GroupContainer extends Component {
   }
 
   displayGroups = () => this.props.groups.map(group => {
-    return <GroupCard {...group} />
+    return <GroupCard {...group} key={group.id} />
   })
 
   render() {
@@ -33,6 +33,6 @@ export const mapStateToProps = state => ({
 export default connect(mapStateToProps, null)(GroupContainer);
 
 
-GroupContainer.PropTypes = {
+GroupContainer.propTypes = {
   groups: PropTypes.array
 }
