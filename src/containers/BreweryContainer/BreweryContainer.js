@@ -12,7 +12,7 @@ export class BreweryContainer extends Component {
   }
   
   displayBreweries = () => this.props.breweries.map(brewery => {
-      return <BreweryCard {...brewery}/>
+      return <BreweryCard {...brewery} key={brewery.id} />
     })
   
 
