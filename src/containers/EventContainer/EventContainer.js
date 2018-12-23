@@ -12,7 +12,7 @@ export class EventContainer extends Component {
   }
 
   displayEvents = () => this.props.events.map(event => {
-    return <EventCard {...event} />
+    return <EventCard {...event} key={event.id}/>
   })
 
   render() {
