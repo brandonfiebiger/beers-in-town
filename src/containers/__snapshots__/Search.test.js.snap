@@ -28,18 +28,22 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <input
+          className="location-inputs"
           name="city"
           onChange={[Function]}
           placeholder="city Ex. Madison"
           value=""
 />,
         <input
+          className="location-inputs"
           name="state"
           onChange={[Function]}
           placeholder="state Ex. WI"
           value=""
 />,
-        <button>
+        <button
+          className="search-button"
+>
           Search
 </button>,
       ],
@@ -52,6 +56,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "location-inputs",
           "name": "city",
           "onChange": [Function],
           "placeholder": "city Ex. Madison",
@@ -66,6 +71,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "location-inputs",
           "name": "state",
           "onChange": [Function],
           "placeholder": "state Ex. WI",
@@ -81,6 +87,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Search",
+          "className": "search-button",
         },
         "ref": null,
         "rendered": "Search",
@@ -97,18 +104,22 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <input
+            className="location-inputs"
             name="city"
             onChange={[Function]}
             placeholder="city Ex. Madison"
             value=""
 />,
           <input
+            className="location-inputs"
             name="state"
             onChange={[Function]}
             placeholder="state Ex. WI"
             value=""
 />,
-          <button>
+          <button
+            className="search-button"
+>
             Search
 </button>,
         ],
@@ -121,6 +132,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "location-inputs",
             "name": "city",
             "onChange": [Function],
             "placeholder": "city Ex. Madison",
@@ -135,6 +147,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "location-inputs",
             "name": "state",
             "onChange": [Function],
             "placeholder": "state Ex. WI",
@@ -150,6 +163,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Search",
+            "className": "search-button",
           },
           "ref": null,
           "rendered": "Search",

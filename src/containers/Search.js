@@ -27,9 +27,8 @@ export class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    const { latitude, longitude } = this.props.location
     const { city, state } = this.state
-    this.props.getLocation(this.state.city, this.state.state);
+    this.props.getLocation(city, state);
     this.props.history.push('/events');
   }
 
