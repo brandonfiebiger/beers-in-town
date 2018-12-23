@@ -4,12 +4,15 @@ import { mapDispatchToProps } from './Search';
 import  { Search } from './Search';
 import { shallow, mount } from 'enzyme';
 import createRouterContext from 'react-router-test-context';
-import { fetchBreweryDataBySearch } from '../thunks/fetchBreweryDataBySearch';
-import { fetchEventDataBySearch } from '../thunks/fetchEventDataBySearch';
-import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
-jest.mock('../thunks/fetchEventDataBySearch');
-jest.mock('../thunks/fetchBreweryDataBySearch');
-jest.mock('../thunks/fetchGroupDataBySearch');
+// import { fetchBreweryDataBySearch } from '../thunks/fetchBreweryDataBySearch';
+// import { fetchEventDataBySearch } from '../thunks/fetchEventDataBySearch';
+// import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
+import { fetchLocationBySearch } from '../thunks/fetchLocationBySearch';
+import { hasErrored } from '../actions';
+// jest.mock('../thunks/fetchEventDataBySearch');
+// jest.mock('../thunks/fetchBreweryDataBySearch');
+// jest.mock('../thunks/fetchGroupDataBySearch');
+jest.mock('../thunks/fetchLocationBySearch');
 
 
 describe('Search', () => {
@@ -59,45 +62,32 @@ describe('Search', () => {
   })
 
   describe('mapDispatchToProps', () => {
-    it('calls dispatch with a fetchBreweryDataBySearch action', () => {
+    it('calls dispatch with a fetchLocationBySearch action', () => {
       const mockDispatch = jest.fn();
 
       const mockLocation = { city: 'Arlen', state: 'Texas' };
-      const actionToDispatch = fetchBreweryDataBySearch('Arlen', 'Texas')
+      const actionToDispatch = fetchLocationBySearch('Arlen', 'Texas')
+      
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      console.log(actionToDispatch)
+
+      mappedProps.getLocation('Arlen', 'Texas');
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+
+    })  
+    
+    it('calls dispatch with a hasErrored action', () => {
+      const mockDispatch = jest.fn();
+
+      const actionToDispatch = hasErrored()
       
       const mappedProps = mapDispatchToProps(mockDispatch);
 
-      mappedProps.getBreweries('Arlen', 'Texas');
+      mappedProps.hasErrored();
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
 
     })
-
-    it('calls dispatch with a fetchEventDataBySearch action', () => {
-      const mockDispatch = jest.fn();
-
-      const mockLocation = { city: 'Arlen', state: 'Texas' };
-      const actionToDispatch = fetchEventDataBySearch('Arlen', 'Texas')
-      
-      const mappedProps = mapDispatchToProps(mockDispatch);
-
-      mappedProps.getEvents('Arlen', 'Texas');
-
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
-    })
-
-    it('calls dispatch with a fetchGroupDataBySearch action', () => {
-      const mockDispatch = jest.fn();
-
-      const mockLocation = { city: 'Arlen', state: 'Texas' };
-      const actionToDispatch = fetchGroupDataBySearch('Arlen', 'Texas')
-      
-      const mappedProps = mapDispatchToProps(mockDispatch);
-
-      mappedProps.getGroups('Arlen', 'Texas');
-
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
-      expect(fetchGroupDataBySearch).toHaveBeenCalledWith('Arlen', 'Texas')
-    })    
   })
 })
