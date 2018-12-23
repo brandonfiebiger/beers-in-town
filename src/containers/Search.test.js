@@ -4,14 +4,8 @@ import { mapDispatchToProps } from './Search';
 import  { Search } from './Search';
 import { shallow, mount } from 'enzyme';
 import createRouterContext from 'react-router-test-context';
-// import { fetchBreweryDataBySearch } from '../thunks/fetchBreweryDataBySearch';
-// import { fetchEventDataBySearch } from '../thunks/fetchEventDataBySearch';
-// import { fetchGroupDataBySearch } from '../thunks/fetchGroupDataBySearch';
 import { fetchLocationBySearch } from '../thunks/fetchLocationBySearch';
 import { hasErrored } from '../actions';
-// jest.mock('../thunks/fetchEventDataBySearch');
-// jest.mock('../thunks/fetchBreweryDataBySearch');
-// jest.mock('../thunks/fetchGroupDataBySearch');
 jest.mock('../thunks/fetchLocationBySearch');
 
 
