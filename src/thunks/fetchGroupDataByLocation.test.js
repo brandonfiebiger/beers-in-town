@@ -16,14 +16,4 @@ describe('fetchGroupDataByLocation', () => {
     expect(mockDispatch).toHaveBeenCalledWith(...[{groups: mockCleanedGroups, "type":"GROUPS_FROM_LOCATION"}])
   })
 
-  // it('throws an error if status code is not ok', async () => {
-  //   let mockDispatch = jest.fn()
-
-  //   const expected = new Error('failed to fetch')
-  //   window.fetch = jest.fn().mockImplementation(() => Promise.reject('failed to fetch'));
-  //   const thunk = await fetchGroupDataByLocation('nope', 'nada')(mockDispatch)
-  //   await thunk(mockDispatch)
-  //   await expect(thunk(mockDispatch)).rejects.toEqual(expected);
-
-  // })
 })
