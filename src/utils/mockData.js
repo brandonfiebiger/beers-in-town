@@ -1562,3 +1562,10 @@ export const mockCleanedGroups = [ { name: undefined,
         time: 4,
         desc: 'Really good'
     }
+
+    export const mockGroupMetaData = {
+        meta: {
+            lat: 55,
+            lon: 80
+        }
+    }
