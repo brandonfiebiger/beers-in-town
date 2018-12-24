@@ -1,6 +1,6 @@
 # Beers In Town
 Beers in Town is an application that utilizes the Meetup API and geo-location to fetch all of the craft beer related events, groups and breweries near your location. You can also search a location in the search fields. No longer will you struggle with finding beer related fun near you!
-Project to practice building out a project with a React/Redux and using [The Meetup API]. Almost fully tested application created with a modular structure and using [Create-React-App](https://github.com/facebook/create-react-app).
+Project to practice building out an application with a React/Redux and using [The Meetup API]. Almost fully tested application created with a modular structure and using [Create-React-App](https://github.com/facebook/create-react-app).
 
 ## Set Up
 
