@@ -8,15 +8,7 @@ import ContentRouter from './components/ContentRouter/ContentRouter';
 import { getLocation } from '../src/actions';
 
 export class App extends Component {
-  
-  componentDidMount() {
-    const { getUserLocation } = this.props;
-    navigator.geolocation.getCurrentPosition((location) => {
-      getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude});
-    });
-  }
-
-  
+    
   render() {
 
     return (

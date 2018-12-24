@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { fetchBreweryDataByLocation } from '../../thunks/fetchBreweryDataByLocation';
 import { fetchEventDataByLocation } from '../../thunks/fetchEventDataByLocation';
 import { fetchGroupDataByLocation } from '../../thunks/fetchGroupDataByLocation';
+import { getLocation } from '../../actions';
 import './ContentRouter.css';
 
 export class ContentRouter extends Component {
@@ -18,6 +19,13 @@ export class ContentRouter extends Component {
     this.state = {
       selected: ''
     }
+  }
+
+  componentDidMount() {
+    const { getUserLocation } = this.props;
+    navigator.geolocation.getCurrentPosition((location) => {
+      getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude});
+    });
   }
 
  handleBreweryRoute = () => {
@@ -90,7 +98,8 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   populateEvents: (latitude, longitude) => dispatch(fetchEventDataByLocation(latitude, longitude)),
   populateGroups: (latitude, longitude) => dispatch(fetchGroupDataByLocation(latitude, longitude)),
-  populateBreweries: (latitude, longitude) => dispatch(fetchBreweryDataByLocation(latitude, longitude))
+  populateBreweries: (latitude, longitude) => dispatch(fetchBreweryDataByLocation(latitude, longitude)),
+  getUserLocation: (location) => dispatch(getLocation(location))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ContentRouter));
