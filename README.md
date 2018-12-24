@@ -22,6 +22,8 @@ You can run tests with `npm test`
 * Use a modular architecture for your application file structure.
 * Think deeply about React Lifecycle Methods.
 * Use propTypes for every component receiving props.
+* Appeal to craft beer enthusiasts using the Meetup API
+* Solve a  real world problem
 
 ## Final Result
 <img width="1436" alt="screen shot 2018-12-23 at 5 37 51 pm" src="https://user-images.githubusercontent.com/29244492/50388641-dbfd6f00-06d9-11e9-9d9d-5b957920e617.png">
