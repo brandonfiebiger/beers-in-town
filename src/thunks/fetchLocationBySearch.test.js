@@ -22,15 +22,15 @@ describe('fetchLocationBySearch', () => {
     window.fetch = jest
     .fn()
     .mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(mockGroupMetaData) }));
-
+    const {lat, lon} = mockGroupMetaData.meta;
     let mockDispatch = jest.fn();
     actions.noError = jest.fn();
     actions.getLocation = jest.fn();
     await fetchLocationBySearch('arlen', 'texas')(mockDispatch);
-    expect(fetchBreweryDataByLocation).toHaveBeenCalled();
-    expect(fetchEventDataByLocation).toHaveBeenCalled();
-    expect(fetchGroupDataByLocation).toHaveBeenCalled();
+    expect(fetchBreweryDataByLocation).toHaveBeenCalledWith(lat, lon);
+    expect(fetchEventDataByLocation).toHaveBeenCalledWith(lat, lon);
+    expect(fetchGroupDataByLocation).toHaveBeenCalledWith(lat, lon);
     expect(actions.noError).toHaveBeenCalled();
-    expect(actions.getLocation).toHaveBeenCalled();
+    expect(actions.getLocation).toHaveBeenCalledWith({"latitude": 55, "longitude": 80});
   })
 })
