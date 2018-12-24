@@ -12,5 +12,7 @@ To use this application:
 
 
 
+<img width="1436" alt="screen shot 2018-12-23 at 5 37 51 pm" src="https://user-images.githubusercontent.com/29244492/50388641-dbfd6f00-06d9-11e9-9d9d-5b957920e617.png">
+
 
 <img width="1440" alt="screen shot 2018-12-21 at 1 23 05 pm" src="https://user-images.githubusercontent.com/29244492/50362180-01e11300-0524-11e9-81a5-1cf916e892ee.png">
