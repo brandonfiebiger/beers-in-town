@@ -1,4 +1,4 @@
-import { apikey } from '../utils/variables';
+import {  } from '../utils/variables';
 import  { getLocation, hasErrored, noError } from '../actions';
 import { cleanGroupData } from '../utils/helper';
 import { fetchBreweryDataByLocation } from './fetchBreweryDataByLocation';

@@ -1,4 +1,3 @@
-import { apikey } from '../utils/variables'
 import { populateBreweriesFromLocation, hasErrored } from '../actions/';
 
 export const fetchBreweryDataByLocation = (latitude, longitude) => {

@@ -1,4 +1,3 @@
-import { apikey } from '../utils/variables';
 import  { populateGroupsFromLocation, hasErrored } from '../actions/';
 import { cleanGroupData } from '../utils/helper';
 

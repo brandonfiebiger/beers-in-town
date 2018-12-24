@@ -1,5 +1,4 @@
 import { populateEventsFromLocation, hasErrored } from '../actions/';
-import { apikey } from '../utils/variables';
 import { eventCleaner } from '../utils/helper';
 
 export const fetchEventDataByLocation = (latitude, longitude) => {
