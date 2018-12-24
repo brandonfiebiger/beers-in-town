@@ -11,8 +11,6 @@ To use this application:
 5. Enjoy!
 
 
-<img width="530" alt="screen shot 2018-09-18 at 1 11 44 pm" src="https://user-images.githubusercontent.com/29244492/45711235-2523ad00-bb46-11e8-8d82-edf3a7ce4a8d.png">
-
 
 
 <img width="1440" alt="screen shot 2018-12-21 at 1 23 05 pm" src="https://user-images.githubusercontent.com/29244492/50362180-01e11300-0524-11e9-81a5-1cf916e892ee.png">
