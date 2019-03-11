@@ -21,7 +21,7 @@ export class ContentRouter extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const { getUserLocation } = this.props;
     navigator.geolocation.getCurrentPosition((location) => {
       getUserLocation({latitude: location.coords.latitude, longitude: location.coords.longitude});
@@ -64,19 +64,19 @@ export class ContentRouter extends Component {
   render() {
     return(
       <div>
-      <header>
-        <button className={this.state.selected === 'events' ? "event-button selected" : "event-button"} onClick={() => this.handleEventRoute()}>events</button>
-        <button className={this.state.selected === 'breweries' ? "brewery-button selected" : "brewery-button"} onClick={() => this.handleBreweryRoute()}>breweries</button>
-        <button className={this.state.selected === 'groups' ? "group-button selected" : "group-button"} onClick={() => this.handleGroupsRoute()}>groups</button>
-      </header>
-      {this.props.hasErrored ? <p className="error-message">Please enter a valid location</p> : ''}
-      <section className="routes-container">
-        <Route exact path= '/events' component={EventContainer} />
-        <Route exact path= '/breweries' component={BreweryContainer} />
-        <Route exact path= '/groups' component={GroupsContainer} />
-        <Route exact path={`/events/${this.props.eventProps.id}`} render={() => <EventInfo {...this.props} />}/>
-        <Route exact path={`/groups/${this.props.groupProps.id}`} render={() => <GroupInfo {...this.props} />}/>
-      </section>
+        <header>
+          <button className={this.state.selected === 'events' ? "event-button selected" : "event-button"} onClick={() => this.handleEventRoute()}>events</button>
+          <button className={this.state.selected === 'breweries' ? "brewery-button selected" : "brewery-button"} onClick={() => this.handleBreweryRoute()}>breweries</button>
+          <button className={this.state.selected === 'groups' ? "group-button selected" : "group-button"} onClick={() => this.handleGroupsRoute()}>groups</button>
+        </header>
+        {this.props.hasErrored ? <p className="error-message">Please enter a valid location</p> : ''}
+        <section className="routes-container">
+          <Route exact path= '/events' component={EventContainer} />
+          <Route exact path= '/breweries' component={BreweryContainer} />
+          <Route exact path= '/groups' component={GroupsContainer} />
+          <Route exact path={`/events/${this.props.eventProps.id}`} render={() => <EventInfo {...this.props} />}/>
+          <Route exact path={`/groups/${this.props.groupProps.id}`} render={() => <GroupInfo {...this.props} />}/>
+        </section>
       </div>
     )
   }
