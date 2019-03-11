@@ -14,7 +14,7 @@ export class App extends Component {
     return (
       <div className="App">
         <h1 id="app-header">BEERS IN TOWN</h1>
-        <Search />
+          <Search />
         <section>
           <ContentRouter />
         </section>
@@ -23,11 +23,7 @@ export class App extends Component {
   }
 }
 
-export const mapDispatchToProps = dispatch => ({
-  getUserLocation: (location) => dispatch(getLocation(location)),
-});
-
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(App);
 
 
 App.propTypes = {
